@@ -1,6 +1,6 @@
 <?php
 
-function calc($students, $minToStartClass, $studentsTimes) {
+function wouldBeALesson($students, $minToStartClass, $studentsTimes) {
     $studentsTimes = explode(' ', $studentsTimes);
     $onTimeStudents = array_filter($studentsTimes, function($row) {
         return $row<=0;
@@ -19,7 +19,7 @@ while ($i++ < $tests) {
     $studentsAndMin = trim(fgets($handle));
     $studentsAndMin = explode(' ', $studentsAndMin);
     $studentsTimes = trim(fgets($handle));
-    echo calc($studentsAndMin[0], $studentsAndMin[1], $studentsTimes).PHP_EOL;
+    echo wouldBeALesson($studentsAndMin[0], $studentsAndMin[1], $studentsTimes).PHP_EOL;
 }
 
 
