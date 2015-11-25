@@ -3,7 +3,7 @@ require "test/unit"
  
 class TestSimpleNumber < Test::Unit::TestCase
  
-  def test_simple
+  def est_simple
     team = TeamTopicsFinder.new
 
     amountOfUsers = 500
