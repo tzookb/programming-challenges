@@ -25,6 +25,6 @@ numOfTests = gets.strip.to_i
 
 	priceOfBlack, priceOfWhite, transCost = gets.strip.split(' ').map(&:to_i)
 	
-	print calc(priceOfBlack, priceOfWhite, numOfBlacks, numOfWhites, transCost)
+	puts calc(priceOfBlack, priceOfWhite, numOfBlacks, numOfWhites, transCost)
 
 end
