@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<form class="calc-form" id="new_calculators_property_information" enctype="multipart/form-data" action="/buy_and_hold_results" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="f/WbrsxCPQCMCjZre3wuIgFhzsLW8IgcbKzwgAhSJUBVNZ/Yz8vi1SsVDjFjCISurmCqKyJ+4Je6YeZrT0WgTQ==">
+		<div class="calc-step" data-step="0" style="display: block;">
+			<fieldset>
+				<p class="w30pc float-right note-bubble">
+					Enter the property information for the investment property you would like to analyze.
+					When you are finished, press the continue button to enter in the financial information.<br><br>
+					If you have any questions, simply click the small question mark next to each item.<br><br>
+					<span class="required-field red">*</span> denotes a required field.
+				</p>
+				<div class="tutorial-video-container">
+					<h4>Need Some Help?</h4>
+					<p>Want to see an example of the calculator in use? Check out this video as Brandon analyzes a rental property using the BiggerPockets Rental Property Calculator!</p>
+					<a target="_blank" data-modal="#tutorial_video" href="https://www.youtube.com/watch?v=hrOR9mYk0Vs">Play Video</a>
+				</div>
+				<div id="tutorial_video" class="modal-container"><div class="modal">
+					<header>
+						<h3>Need some help?</h3>
+					</header>
+					<section>
+						<iframe width="748" height="421" src="https://www.youtube.com/embed/hrOR9mYk0Vs" frameborder="0" allowfullscreen=""></iframe>
+					</section>
+					<footer>
+						<a class="button" data-modal-action="close" href="#">Close</a>
+					</footer>
+				</div></div>
+				<p>
+					<label for="calculators_property_information_title">
+						Report Title <span class="required-field red">*</span>
+						<em class="icon icon-help has-tooltip" title=""></em>
+					</label>
+					<input class="long" data-required="true" type="text" name="calculators_property_information[title]" id="calculators_property_information_title"><br>
+					<span class="explanation">What do you want to name this report?</span>
+				</p>
+				<p>
+					<label for="calculators_property_information_property_address">
+						Property Address
+						<em class="icon icon-help has-tooltip" title=""></em>
+					</label> <input class="long" type="text" name="calculators_property_information[property_address]" id="calculators_property_information_property_address">
+				</p>
+				<p class="w30pc float-left">
+					<label for="calculators_property_information_property_city">Property City</label>
+					<input class="medium" type="text" name="calculators_property_information[property_city]" id="calculators_property_information_property_city">
+				</p>
+				<p class="w20pc float-left">
+					<label for="calculators_property_information_property_state">Property State</label>
+					<input class="short" type="text" name="calculators_property_information[property_state]" id="calculators_property_information_property_state">
+				</p>
+				<p class="w15pc float-left">
+					<label for="calculators_property_information_property_zip">Property Zip</label>
+					<input class="numeric" type="text" name="calculators_property_information[property_zip]" id="calculators_property_information_property_zip">
+				</p>
+				<p class="clear-left w20pc float-left">
+					<label for="calculators_property_information_property_tax">
+						Annual Property Taxes
+						<em class="icon icon-help has-tooltip" title=""></em>
+					</label> <span class="currency-indicator">$</span><input class="currency" type="text" value="0.0" name="calculators_property_information[property_tax]" id="calculators_property_information_property_tax">
+				</p>
+				<p class="w30pc float-left">
+					<label for="calculators_property_information_mls_number">
+						MLS Number
+						<em class="icon icon-help has-tooltip" title=""></em>
+					</label> <input class="numeric" type="text" name="calculators_property_information[mls_number]" id="calculators_property_information_mls_number">
+				</p>
+				<div id="property_images" class="clear-left">
+					<label class="has-help" for="image">
+						Property Photos
+						<em class="icon icon-help has-tooltip" title=""></em>
+					</label>
+					<br class="clear-left">
+				</div>
+				<p class="clear-left w15pc add-new-property-photo">
+					<a class="button small add-fields" data-id="70259495899440" data-fields="  <div class=&quot;clear w40pc float-left new-property-photo&quot;>    <p class=&quot;w75pc float-left&quot;>      <label class=&quot;normal-weight&quot; for=&quot;calculators_property_information_property_images_attributes_70259495899440_image&quot;>Upload Property Photo</label><br />      <input type=&quot;file&quot; name=&quot;calculators_property_information[property_images_attributes][70259495899440][image]&quot; id=&quot;calculators_property_information_property_images_attributes_70259495899440_image&quot; />    </p>    <p class=&quot;w25pc float-left&quot;>      <a class=&quot;remove-fields&quot; data-remove=&quot;div&quot; href=&quot;javascript:void(0);&quot;>Cancel</a>      <input type=&quot;hidden&quot; value=&quot;false&quot; name=&quot;calculators_property_information[property_images_attributes][70259495899440][_destroy]&quot; id=&quot;calculators_property_information_property_images_attributes_70259495899440__destroy&quot; />    </p>    <br class=&quot;clear&quot; />  </div>" data-target="property_images" href="javascript:void(0);">Add a photo</a>
+				</p>
+				<p class="clear-left">
+					<label for="calculators_property_information_sales_description">
+						Property Sales Description
+						<em class="icon icon-help has-tooltip" title=""></em>
+					</label> <textarea class="long" rows="5" name="calculators_property_information[sales_description]" id="calculators_property_information_sales_description"></textarea>
+				</p>
+				<p class="clear-left w25pc">
+					<a class="button small expand-form float-left" data-opens="other-features" href="#">
+						Other property features &nbsp;
+					</a> <em class="icon icon-help has-tooltip" title=""></em>
+				</p>
+				<div class="sub-form w65pc" id="other-features" style="">
+					<p>
+						<span class="block w20pc float-left">
+							<label class="normal-weight" for="calculators_property_information_number_of_bedrooms">Bedrooms</label>
+							<span class="select-container"><select name="calculators_property_information[number_of_bedrooms]" id="calculators_property_information_number_of_bedrooms"><option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10+">10+</option></select></span>
+							</span>
+							<span class="block w20pc float-left">
+								<label class="normal-weight" for="calculators_property_information_number_of_bathrooms">Bathrooms</label>
+								<span class="select-container"><select name="calculators_property_information[number_of_bathrooms]" id="calculators_property_information_number_of_bathrooms"><option value="0">0</option>
+									<option value="0 1/2">0 1/2</option>
+									<option value="0 3/4">0 3/4</option>
+									<option value="1">1</option>
+									<option value="1 1/2">1 1/2</option>
+									<option value="1 3/4">1 3/4</option>
+									<option value="2">2</option>
+									<option value="2 1/2">2 1/2</option>
+									<option value="2 3/4">2 3/4</option>
+									<option value="3">3</option>
+									<option value="3 1/2">3 1/2</option>
+									<option value="3 3/4">3 3/4</option>
+									<option value="4">4</option>
+									<option value="4 1/2">4 1/2</option>
+									<option value="4 3/4">4 3/4</option>
+									<option value="5">5</option>
+									<option value="5 1/2">5 1/2</option>
+									<option value="5 3/4">5 3/4</option>
+									<option value="6">6</option>
+									<option value="6 1/2">6 1/2</option>
+									<option value="6 3/4">6 3/4</option>
+									<option value="7">7</option>
+									<option value="7 1/2">7 1/2</option>
+									<option value="7 3/4">7 3/4</option>
+									<option value="8">8</option>
+									<option value="8 1/2">8 1/2</option>
+									<option value="8 3/4">8 3/4</option>
+									<option value="9+">9+</option></select></span>
+								</span>
+								<br class="clear">
+							</p>
+							<p class="third-width float-left">
+								<label for="calculators_property_information_house_size_sq_ft">Total Sq. Footage</label>
+								<input class="numeric" type="text" name="calculators_property_information[house_size_sq_ft]" id="calculators_property_information_house_size_sq_ft">
+							</p>
+							<p class="third-width float-left">
+								<label for="calculators_property_information_lot_size_sq_ft">Lot Size (Sq Ft.)</label>
+								<input class="numeric" type="text" name="calculators_property_information[lot_size_sq_ft]" id="calculators_property_information_lot_size_sq_ft">
+							</p>
+							<p class="third-width float-left">
+								<label for="calculators_property_information_year_built">Year Built</label>
+								<input class="numeric" type="text" name="calculators_property_information[year_built]" id="calculators_property_information_year_built">
+							</p>
+							<p class="third-width float-left">
+								<label for="calculators_property_information_year_renovated">Year Renovated</label>
+								<input class="numeric" type="text" name="calculators_property_information[year_renovated]" id="calculators_property_information_year_renovated">
+							</p>
+							<p class="third-width float-left">
+								<label for="calculators_property_information_units">Units</label>
+								<input class="numeric" type="text" name="calculators_property_information[units]" id="calculators_property_information_units">
+							</p>
+							<p class="third-width float-left">
+								<label for="calculators_property_information_stories">Stories</label>
+								<input class="numeric" type="text" name="calculators_property_information[stories]" id="calculators_property_information_stories">
+							</p>
+							<p class="half-width float-left">
+								<label for="calculators_property_information_property_type">Property Type</label>
+								<span class="select-container"><select name="calculators_property_information[property_type]" id="calculators_property_information_property_type"><option value="Single Family">Single Family</option>
+									<option value="Small Multifamily (2-4 Units)">Small Multifamily (2-4 Units)</option>
+									<option value="Large Multifamily (5+ Units)">Large Multifamily (5+ Units)</option>
+									<option value="Commercial">Commercial</option>
+									<option value="Industrial">Industrial</option>
+									<option value="Mobile Home">Mobile Home</option>
+									<option value="Other">Other</option></select></span>
+								</p>
+								<p class="half-width float-left">
+									<label for="calculators_property_information_county_appraised_value">County Appraised Value</label>
+									<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[county_appraised_value]" id="calculators_property_information_county_appraised_value">
+								</p>
+								<p class="clear-left w30pc float-left">
+									<input name="calculators_property_information[pool]" type="hidden" value="0"><input type="checkbox" value="1" name="calculators_property_information[pool]" id="calculators_property_information_pool"> <label for="calculators_property_information_pool">Pool</label>
+								</p>
+								<p class="w30pc float-left">
+									<input name="calculators_property_information[heating]" type="hidden" value="0"><input type="checkbox" value="1" name="calculators_property_information[heating]" id="calculators_property_information_heating"> <label for="calculators_property_information_heating">Heating</label>
+								</p>
+								<p class="w30pc float-left">
+									<input name="calculators_property_information[cooling]" type="hidden" value="0"><input type="checkbox" value="1" name="calculators_property_information[cooling]" id="calculators_property_information_cooling"> <label for="calculators_property_information_cooling">Cooling</label>
+								</p>
+								<p class="w30pc float-left">
+									<input name="calculators_property_information[fireplace]" type="hidden" value="0"><input type="checkbox" value="1" name="calculators_property_information[fireplace]" id="calculators_property_information_fireplace"> <label for="calculators_property_information_fireplace">Fireplace</label>
+								</p>
+								<p class="w30pc float-left">
+									<input name="calculators_property_information[garage]" type="hidden" value="0"><input type="checkbox" value="1" name="calculators_property_information[garage]" id="calculators_property_information_garage"> <label for="calculators_property_information_garage">Garage</label>
+								</p>
+								<p class="clear-left half-width float-left">
+									<label for="calculators_property_information_construction">Construction</label>
+									<input class="medium" type="text" name="calculators_property_information[construction]" id="calculators_property_information_construction">
+								</p>
+								<p class="half-width float-left">
+									<label for="calculators_property_information_roofing">Roofing</label>
+									<input class="medium" type="text" name="calculators_property_information[roofing]" id="calculators_property_information_roofing">
+								</p>
+								<p class="half-width float-left">
+									<label for="calculators_property_information_flooring_types">Flooring Type(s)</label>
+									<input class="medium" type="text" name="calculators_property_information[flooring_types]" id="calculators_property_information_flooring_types">
+								</p>
+								<p class="half-width float-left">
+									<label for="calculators_property_information_wiring_condition">Wiring Condition</label>
+									<input class="medium" type="text" name="calculators_property_information[wiring_condition]" id="calculators_property_information_wiring_condition">
+								</p>
+								<p class="half-width float-left">
+									<label for="calculators_property_information_plumbing_condition">Plumbing Condition</label>
+									<input class="medium" type="text" name="calculators_property_information[plumbing_condition]" id="calculators_property_information_plumbing_condition">
+								</p>
+								<p class="half-width float-left">
+									<label for="calculators_property_information_siding_material">Siding Material</label>
+									<input class="medium" type="text" name="calculators_property_information[siding_material]" id="calculators_property_information_siding_material">
+								</p>
+								<p class="clear no-margin">
+									<label for="calculators_property_information_other_property_info">Other Property Information</label>
+									<textarea class="long" rows="5" name="calculators_property_information[other_property_info]" id="calculators_property_information_other_property_info"></textarea>
+								</p>
+								<br class="clear">
+							</div>
+							<p class="clear button-container next-button">
+								<a href="#" class="button initiate next-step">Next Step</a>
+							</p>
+						</fieldset>
+					</div>
+
+
+
+					<div class="calc-step" data-step="1" style="">
+						<fieldset>
+							<p class="w30pc float-right note-bubble">
+								Enter the financial information, loan details, and monthly expenses for the investment property you would like to analyze.
+								When you are finished, press the continue button to enter in the sale info.<br><br>
+								<span class="required-field red">*</span> denotes a required field.
+							</p>
+							<p>
+								<label for="calculators_property_information_purchase_price">
+									Purchase Price <span class="required-field red">*</span>
+									<em class="icon icon-help has-tooltip" title=""></em>
+								</label> <span class="currency-indicator">$</span><input class="currency" data-required="true" type="text" value="0.0" name="calculators_property_information[purchase_price]" id="calculators_property_information_purchase_price">
+							</p>
+							<p>
+								<label for="calculators_property_information_buy_and_hold_result_attributes_after_repair_value">
+									After Repair Value <span class="required-field red">*</span>
+									<em class="icon icon-help has-tooltip" title=""></em>
+								</label> <span class="currency-indicator">$</span><input class="currency" data-required="true" type="text" name="calculators_property_information[buy_and_hold_result_attributes][after_repair_value]" id="calculators_property_information_buy_and_hold_result_attributes_after_repair_value">
+							</p>
+							<p>
+								<label for="calculators_property_information_purchase_closing_cost">
+									Purchase Closing Cost
+									<em class="icon icon-help has-tooltip" title=""></em>
+								</label> <span class="currency-indicator">$</span><input class="currency" type="text" value="0.0" name="calculators_property_information[purchase_closing_cost]" id="calculators_property_information_purchase_closing_cost"> <span class="calc-form-or">or</span>
+								<a class="expand-form" data-opens="purchase-closing-costs" href="#">
+									<em class="icon-plus-sign"></em> Expand costs
+								</a> </p>
+								<div class="sub-form w65pc hidden" id="purchase-closing-costs">
+									<p class="w40pc float-left">
+										<label for="calculators_property_information_points_or_origination_fee">Points / Origination Fee</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[points_or_origination_fee]" id="calculators_property_information_points_or_origination_fee">
+									</p>
+									<p class="w40pc float-left">
+										<label for="calculators_property_information_prepaid_hazzard_insurance">Prepaid Hazard Insurance</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[prepaid_hazzard_insurance]" id="calculators_property_information_prepaid_hazzard_insurance">
+									</p>
+									<p class="w40pc float-left">
+										<label for="calculators_property_information_prepaid_flood_insurance">Prepaid Flood Insurance</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[prepaid_flood_insurance]" id="calculators_property_information_prepaid_flood_insurance">
+									</p>
+									<p class="w40pc float-left">
+										<label for="calculators_property_information_prepaid_property_taxes">Prepaid Property Taxes</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[prepaid_property_taxes]" id="calculators_property_information_prepaid_property_taxes">
+									</p>
+									<p class="w40pc float-left">
+										<label for="calculators_property_information_annual_assessments">Annual Assessments</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[annual_assessments]" id="calculators_property_information_annual_assessments">
+									</p>
+									<p class="w40pc float-left">
+										<label for="calculators_property_information_title_and_escrow_fees">Title and Escrow Fees</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[title_and_escrow_fees]" id="calculators_property_information_title_and_escrow_fees">
+									</p>
+									<p class="w40pc float-left">
+										<label for="calculators_property_information_attorney_charges">Attorney Charges</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[attorney_charges]" id="calculators_property_information_attorney_charges">
+									</p>
+									<p class="w40pc float-left">
+										<label for="calculators_property_information_recording_fees">Recording Fees</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[recording_fees]" id="calculators_property_information_recording_fees">
+									</p>
+									<p class="w40pc float-left no-bottom-margin">
+										<label for="calculators_property_information_other_fees_charges">Other Fees / Charges</label>
+										<span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[other_fees_charges]" id="calculators_property_information_other_fees_charges">
+									</p>
+									<br class="clear">
+								</div>
+								<p>
+									<label for="calculators_property_information_estimated_repair_cost">
+										Estimated Repair Cost
+										<em class="icon icon-help has-tooltip" title=""></em>
+									</label> <span class="currency-indicator">$</span><input class="currency" type="text" value="0.0" name="calculators_property_information[estimated_repair_cost]" id="calculators_property_information_estimated_repair_cost"> <span class="calc-form-or">or</span>
+									<a class="expand-form" data-opens="estimated-repair-costs" href="#">
+										<em class="icon-plus-sign"></em> Expand costs
+									</a> </p>
+									<div class="sub-form w65pc hidden" id="estimated-repair-costs">
+										<h3>Exterior Repairs</h3>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_roof">Roof</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_roof]" id="calculators_property_information_repairs_roof">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_concrete">Concrete</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_concrete]" id="calculators_property_information_repairs_concrete">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_gutters">Gutters/Soffit/Fascia</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_gutters]" id="calculators_property_information_repairs_gutters">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_garage">Garage</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_garage]" id="calculators_property_information_repairs_garage">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_siding">Siding</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_siding]" id="calculators_property_information_repairs_siding">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_landscaping">Landscaping</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_landscaping]" id="calculators_property_information_repairs_landscaping">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_ext_painting">Exterior Painting</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_ext_painting]" id="calculators_property_information_repairs_ext_painting">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_septic">Septic</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_septic]" id="calculators_property_information_repairs_septic">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_decks">Decks/Porches</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_decks]" id="calculators_property_information_repairs_decks">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_foundation">Foundation</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_foundation]" id="calculators_property_information_repairs_foundation">
+										</p>
+										<br class="clear">
+										<h3>Interior Repairs</h3>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_demo">Demo</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_demo]" id="calculators_property_information_repairs_demo">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_sheetrock">Sheetrock</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_sheetrock]" id="calculators_property_information_repairs_sheetrock">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_plumping">Plumbing</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_plumping]" id="calculators_property_information_repairs_plumping">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_carpentry">Carpentry</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_carpentry]" id="calculators_property_information_repairs_carpentry">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_electrical">Electrical</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_electrical]" id="calculators_property_information_repairs_electrical">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_int_painting">Interior Painting</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_int_painting]" id="calculators_property_information_repairs_int_painting">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_hvac">HVAC</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_hvac]" id="calculators_property_information_repairs_hvac">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_cabinets">Cabinets/Countertops</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_cabinets]" id="calculators_property_information_repairs_cabinets">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_framing">Framing</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_framing]" id="calculators_property_information_repairs_framing">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_flooring">Flooring</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_flooring]" id="calculators_property_information_repairs_flooring">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_insulation">Insulation</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_insulation]" id="calculators_property_information_repairs_insulation">
+										</p>
+										<br class="clear">
+										<h3>General Components</h3>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_permits">Permits</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_permits]" id="calculators_property_information_repairs_permits">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_termites">Termites</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_termites]" id="calculators_property_information_repairs_termites">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_mold">Mold</label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_mold]" id="calculators_property_information_repairs_mold">
+										</p>
+										<p class="w40pc float-left">
+											<label for="calculators_property_information_repairs_misc">Miscellaneous </label>
+											<span class="currency-indicator">$</span><input class="currency buy-and-hold-expense-input" type="text" name="calculators_property_information[repairs_misc]" id="calculators_property_information_repairs_misc">
+										</p>
+										<br class="clear">
+									</div>
+									<h3 class="line clear"><span>Loan Details</span></h3>
+									<p class="is-cash-purchase">
+										<input name="calculators_property_information[cash_purchase]" type="hidden" value="0"><input type="checkbox" value="1" name="calculators_property_information[cash_purchase]" id="calculators_property_information_cash_purchase">
+										<label for="calculators_property_information_cash_purchase">
+											Cash Purchase?
+											<em class="icon icon-help has-tooltip" title=""></em>
+										</label> </p>
+										<div class="loan-fields" style="">
+											<p class="w30pc float-left">
+												<label for="calculators_property_information_down_payment">
+													Down payment of purchase price
+													<em class="icon icon-help has-tooltip" title=""></em>
+												</label> <span class="select-container"><select name="calculators_property_information[down_payment]" id="calculators_property_information_down_payment"><option value=""></option>
+												<option value="3.5">3.5%</option>
+												<option value="5">5%</option>
+												<option value="10">10%</option>
+												<option value="15">15%</option>
+												<option value="20">20%</option>
+												<option value="25">25%</option>
+												<option value="30">30%</option>
+												<option value="35">35%</option>
+												<option value="40">40%</option>
+												<option value="45">45%</option>
+												<option value="50">50%</option></select></span>
+											</p>
+											<p class="w10pc float-left" style="padding-top: 1.5em; color: #666;">
+												— Or —
+											</p>
+											<p class="w30pc float-left">
+												<label for="calculators_property_information_loan_amount">Enter Loan Amount <span class="required-field red">*</span></label>
+												<em class="icon-question-sign icon-large" title="The total loan amount you plan on taking."></em>
+												<span class="currency-indicator">$</span><input class="currency" data-required="true" type="text" value="0.0" name="calculators_property_information[loan_amount]" id="calculators_property_information_loan_amount" style="opacity: 1;">
+											</p>
+											<p class="w30pc float-left clear-left">
+												<label for="calculators_property_information_loan_interest_rate">
+													Loan Interest Rate (%) <span class="required-field red">*</span>
+													<em class="icon icon-help has-tooltip" title=""></em>
+												</label> <input class="percentage" data-required="true" type="text" value="0.0" name="null" id="calculators_property_information_loan_interest_rate"><input type="hidden" name="calculators_property_information[loan_interest_rate]" value="">
+											</p>
+											<div class="w30pc float-right note-bubble">
+												<ul class="no-bottom-margin bulleted">
+													<li><a target="blank" href="/currentrates">Local conventional mortgage rates</a></li>
+													<li><a target="blank" href="/hardmoneylenders">Find a hard money lender</a></li>
+												</ul>
+											</div>
+											<p class="clear-left float-left w30pc">
+												<label for="calculators_property_information_points_charged_by_lender">
+													Points charged by lender
+													<em class="icon icon-help has-tooltip" title=""></em>
+												</label> <input class="numeric" type="text" name="calculators_property_information[points_charged_by_lender]" id="calculators_property_information_points_charged_by_lender">
+											</p>
+											<p class="float-left w30pc">
+												<label for="calculators_property_information_other_lender_fees">
+													Other Charges From the Lender
+													<em class="icon icon-help has-tooltip" title=""></em>
+												</label> <span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[other_lender_fees]" id="calculators_property_information_other_lender_fees">
+											</p>
+											<p class="clear-left float-left w80pc">
+												<label for="calculators_property_information_wrap_loan_fees_into_loan">
+													Loan Fees &amp; Points <span class="required-field red">*</span>
+													<em class="icon icon-help has-tooltip" title=""></em>
+												</label>
+												<span class="block w45pc float-left">
+													<input type="radio" value="true" name="calculators_property_information[wrap_loan_fees_into_loan]" id="calculators_property_information_wrap_loan_fees_into_loan_true">
+													<label class="normal-weight" for="calculators_property_information_wrap_loan_fees_into_loan_true">Wrap loan fees/points into the loan</label><br>
+												</span>
+												<span class="block w45pc float-left">
+													<input type="radio" value="false" checked="checked" name="calculators_property_information[wrap_loan_fees_into_loan]" id="calculators_property_information_wrap_loan_fees_into_loan_false" class="checked">
+													<label class="normal-weight checked" for="calculators_property_information_wrap_loan_fees_into_loan_false">Pay loan fees/points out of pocket</label>
+												</span>
+												<br class="clear">
+											</p>
+											<p class="float-left w90pc">
+												<label for="calculators_property_information_interest_only">
+													Interest Only? <span class="required-field red">*</span>
+													<em class="icon icon-help has-tooltip" title=""></em>
+												</label> <span class="block w20pc float-left">
+												<input type="radio" value="true" name="calculators_property_information[interest_only]" id="calculators_property_information_interest_only_true">
+												<label for="calculators_property_information_interest_only_true">Yes</label>
+											</span>
+											<span class="block w20pc float-left">
+												<input type="radio" value="false" checked="checked" name="calculators_property_information[interest_only]" id="calculators_property_information_interest_only_false" class="checked">
+												<label for="calculators_property_information_interest_only_false" class="checked">No</label>
+											</span>
+											<br class="clear">
+										</p>
+										<p class="clear amortization-field">
+											<label for="calculators_property_information_amortization_time">
+												Amortized Over How Many Years? <span class="required-field red">*</span>
+												<em class="icon icon-help has-tooltip" title=""></em>
+											</label> <input class="numeric" data-required="true" data-validate-greater-than-zero="true" type="text" value="0" name="calculators_property_information[amortization_time]" id="calculators_property_information_amortization_time">
+										</p>
+									</div>
+									<p class="clear">
+										<label for="calculators_property_information_buy_and_hold_result_attributes_typical_cap_rate_for_area">
+											Typical Cap Rate for Your Area (%)
+											<em class="icon icon-help has-tooltip" title=""></em>
+										</label>
+										<input class="percentage" type="text" name="null" id="calculators_property_information_buy_and_hold_result_attributes_typical_cap_rate_for_area"><input type="hidden" name="calculators_property_information[buy_and_hold_result_attributes][typical_cap_rate_for_area]" value="">
+									</p>
+									<br class="clear">
+									<p class="button-container previous-button">
+										<a href="#" class="button prev-step">Previous Step</a>
+									</p>
+									<p class="button-container next-button">
+										<a href="#" class="button initiate next-step">Next Step</a>
+									</p>
+								</fieldset>
+							</div>
+							<div class="calc-step" data-step="2" style="">
+								<fieldset>
+									<h3 class="line"><span>Income</span></h3>
+									<div class="float-left">
+										<p>
+											<label for="calculators_property_information_buy_and_hold_result_attributes_total_gross_monthly_rental_income">
+												Total Gross Monthly Rent <span class="required-field red">*</span>
+												<em class="icon icon-help has-tooltip" title=""></em>
+											</label>
+											<span class="currency-indicator">$</span><input class="currency" data-required="true" type="text" name="calculators_property_information[buy_and_hold_result_attributes][total_gross_monthly_rental_income]" id="calculators_property_information_buy_and_hold_result_attributes_total_gross_monthly_rental_income"> <span class="calc-form-or">or</span>
+											<a class="expand-form" data-opens="total-gross-monthly-rent" href="#">
+												<em class="icon-plus-sign"></em> Add units
+											</a> </p>
+											<div class="sub-form hidden" id="total-gross-monthly-rent">
+												<div id="buy_and_hold_rents">
+												</div>
+												<p class="clear no-margin">
+													<a class="button small add-fields" data-id="70259481463560" data-fields="<div>  <p class=&quot;clear w50pc float-left&quot;>    <label for=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_rents_attributes_70259481463560_name&quot;>Unit</label><br />    <input class=&quot;buy-and-hold-unit-rent-input&quot; type=&quot;text&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_rents_attributes][70259481463560][name]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_rents_attributes_70259481463560_name&quot; />  </p>  <p class=&quot;w40pc float-right&quot;>    <label for=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_rents_attributes_70259481463560_rent&quot;>Rent</label><br />    <input class=&quot;currency buy-and-hold-unit-rent-input&quot; type=&quot;text&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_rents_attributes][70259481463560][rent]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_rents_attributes_70259481463560_rent&quot; />    <input type=&quot;hidden&quot; value=&quot;false&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_rents_attributes][70259481463560][_destroy]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_rents_attributes_70259481463560__destroy&quot; />    <a class=&quot;remove-fields&quot; data-remove=&quot;div&quot; href=&quot;javascript:void(0);&quot;>x</a>  </p></div>" data-target="buy_and_hold_rents" href="javascript:void(0);">Add unit</a>
+												</p>
+											</div>
+											<p>
+												<label for="calculators_property_information_buy_and_hold_result_attributes_other_monthly_income">
+													Other Monthly Income
+													<em class="icon icon-help has-tooltip" title=""></em>
+												</label> <span class="currency-indicator">$</span><input class="currency" type="text" name="calculators_property_information[buy_and_hold_result_attributes][other_monthly_income]" id="calculators_property_information_buy_and_hold_result_attributes_other_monthly_income"> <span class="calc-form-or">or</span>
+												<a class="expand-form" data-opens="other-monthly-income" href="#">
+													<em class="icon-plus-sign"></em> Add Income
+												</a> </p>
+												<div class="sub-form" id="other-monthly-income">
+													<div id="buy_and_hold_other_incomes">
+													</div>
+													<p class="clear no-margin">
+														<a class="button small add-fields" data-id="70259481224840" data-fields="<div>  <p class=&quot;clear w50pc float-left&quot;>    <label for=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_incomes_attributes_70259481224840_name&quot;>Name</label><br />    <input class=&quot;buy-and-hold-other-income-input&quot; type=&quot;text&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_other_incomes_attributes][70259481224840][name]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_incomes_attributes_70259481224840_name&quot; />  </p>  <p class=&quot;w40pc float-right&quot;>    <label for=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_incomes_attributes_70259481224840_value&quot;>Value</label><br />    <input class=&quot;currency buy-and-hold-other-income-input&quot; type=&quot;text&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_other_incomes_attributes][70259481224840][value]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_incomes_attributes_70259481224840_value&quot; />    <input type=&quot;hidden&quot; value=&quot;false&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_other_incomes_attributes][70259481224840][_destroy]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_incomes_attributes_70259481224840__destroy&quot; />    <a class=&quot;remove-fields&quot; data-remove=&quot;div&quot; href=&quot;javascript:void(0);&quot;>x</a>  </p></div>" data-target="buy_and_hold_other_incomes" href="javascript:void(0);">Add income</a>
+													</p>
+												</div>
+											</div>
+											<p class="w30pc note-bubble float-right">
+												Enter the sale information for the investment property you would like to analyze. When you are finished, please press the Calculate button to see the results.<br><br>
+												<span class="required-field red">*</span> denotes a required field.
+											</p>
+											<div class="w20pc total-bubble float-right">
+												<p class="total-monthly-income no-margin">
+													<strong>Total Monthly Income:</strong><br>
+													<span>$0</span>
+												</p>
+											</div>
+											<br class="clear">
+											<h3 class="line"><span>Fixed Landlord-Paid Expenses</span></h3>
+											<p class="w25pc float-left">
+												<label for="calculators_property_information_buy_and_hold_result_attributes_electricity_expense">Electricity</label>
+												<span class="currency-indicator">$</span><input class="currency fixed-expense" type="text" name="calculators_property_information[buy_and_hold_result_attributes][electricity_expense]" id="calculators_property_information_buy_and_hold_result_attributes_electricity_expense">
+											</p>
+											<p class="w25pc float-left">
+												<label for="calculators_property_information_buy_and_hold_result_attributes_water_expense">Water</label>
+												<span class="currency-indicator">$</span><input class="currency fixed-expense" type="text" name="calculators_property_information[buy_and_hold_result_attributes][water_expense]" id="calculators_property_information_buy_and_hold_result_attributes_water_expense">
+											</p>
+											<p class="w25pc float-left">
+												<label for="calculators_property_information_buy_and_hold_result_attributes_sewer_expense">Sewer</label>
+												<span class="currency-indicator">$</span><input class="currency fixed-expense" type="text" name="calculators_property_information[buy_and_hold_result_attributes][sewer_expense]" id="calculators_property_information_buy_and_hold_result_attributes_sewer_expense">
+											</p>
+											<p class="w25pc float-left">
+												<label for="calculators_property_information_buy_and_hold_result_attributes_garbage_expense">Garbage</label>
+												<span class="currency-indicator">$</span><input class="currency fixed-expense" type="text" name="calculators_property_information[buy_and_hold_result_attributes][garbage_expense]" id="calculators_property_information_buy_and_hold_result_attributes_garbage_expense">
+											</p>
+											<p class="w25pc float-left">
+												<label for="calculators_property_information_buy_and_hold_result_attributes_hoas_expense">HOAs</label>
+												<span class="currency-indicator">$</span><input class="currency fixed-expense" type="text" name="calculators_property_information[buy_and_hold_result_attributes][hoas_expense]" id="calculators_property_information_buy_and_hold_result_attributes_hoas_expense">
+											</p>
+											<p class="w25pc float-left">
+												<label for="calculators_property_information_buy_and_hold_result_attributes_insurance_expense">Monthly Insurance</label>
+												<span class="currency-indicator">$</span><input class="currency fixed-expense" type="text" name="calculators_property_information[buy_and_hold_result_attributes][insurance_expense]" id="calculators_property_information_buy_and_hold_result_attributes_insurance_expense">
+											</p>
+											<p class="w25pc float-left" id="property-taxes">
+												<label for="calculators_property_information_buy_and_hold_result_attributes_monthly_property_taxes">
+													Property Taxes <em class="icon icon-help has-tooltip" title=""></em>
+												</label> <span class="currency-indicator">$</span><input type="text" id="monthly_property_taxes" class="currency" disabled="disabled" style="opacity: 0.6 !important;">
+											</p>
+											<p>
+												<label for="calculators_property_information_buy_and_hold_result_attributes_misc_monthly_expense">Other Monthly Expenses</label> <em class="icon-question-sign icon-large" title="Total other miscellaneous MONTHLY expenses for the property not accounted for in this calculator."></em>
+												<span class="currency-indicator">$</span><input class="currency fixed-expense misc-monthly-expense" type="text" name="calculators_property_information[buy_and_hold_result_attributes][misc_monthly_expense]" id="calculators_property_information_buy_and_hold_result_attributes_misc_monthly_expense"> <span class="calc-form-or">or</span>
+												<a class="expand-form" data-opens="other-monthly-expenses" href="#">
+													<em class="icon-plus-sign"></em> Add
+												</a> </p>
+												<div class="sub-form w65pc hidden" id="other-monthly-expenses">
+													<div id="buy_and_hold_other_expenses">
+													</div>
+													<p class="clear no-margin" id="add-expenses-button">
+														<a class="button small add-fields" data-id="70259480836660" data-fields="<div>  <p class=&quot;clear w50pc float-left&quot;>    <label for=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_expenses_attributes_70259480836660_name&quot;>Expense</label><br />    <input class=&quot;buy-and-hold-other-expense-input&quot; type=&quot;text&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_other_expenses_attributes][70259480836660][name]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_expenses_attributes_70259480836660_name&quot; />  </p>  <p class=&quot;w40pc float-left &quot;>    <label for=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_expenses_attributes_70259480836660_cost&quot;>Cost</label><br />    <input class=&quot;currency buy-and-hold-other-expense-input fixed-expense&quot; type=&quot;text&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_other_expenses_attributes][70259480836660][cost]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_expenses_attributes_70259480836660_cost&quot; />    <input class=&quot;destroy-field&quot; type=&quot;hidden&quot; value=&quot;false&quot; name=&quot;calculators_property_information[buy_and_hold_result_attributes][buy_and_hold_other_expenses_attributes][70259480836660][_destroy]&quot; id=&quot;calculators_property_information_buy_and_hold_result_attributes_buy_and_hold_other_expenses_attributes_70259480836660__destroy&quot; />    <a class=&quot;remove-fields&quot; data-remove=&quot;div&quot; href=&quot;javascript:void(0);&quot;>x</a>  </p></div>" data-target="buy_and_hold_other_expenses" href="javascript:void(0);">Add expense</a>
+													</p>
+												</div>
+												<div class="w20pc float-right total-bubble" id="total-monthly-mortgage-expense" style="display:inline;">
+													<p class="no-margin">
+														<strong>Total Monthly Mortgage (P&amp;I) Expense:</strong><br>
+														<span>-</span>
+													</p>
+												</div>
+												<p class="w20pc float-left total-bubble" id="total-monthly-fixed-expense" style="display:inline;">
+													<strong>Total Monthly Fixed Expense:</strong><br>
+													<span>$0.00</span>
+												</p>
+												<br class="clear">
+												<h3 class="line">
+													<span>Variable Landlord-Paid Expenses</span>
+
+												</h3>
+												<p class="w25pc float-left">
+													<label for="calculators_property_information_buy_and_hold_result_attributes_vacancy_rate">
+														Vacancy <span class="percentage-symbol">(%)</span>
+														<em class="icon icon-help has-tooltip" title=""></em>
+													</label>
+													<input class="variable-expense percentage" data-do-not-shadow="true" data-field-name="vacancy_rate" type="text" name="calculators_property_information[buy_and_hold_result_attributes][vacancy_rate]" id="calculators_property_information_buy_and_hold_result_attributes_vacancy_rate">
+													<span class="variable-expense-dollar-amount">($0.00)</span>
+												</p>
+												<p class="w25pc float-left">
+													<label for="calculators_property_information_buy_and_hold_result_attributes_maintenance_percent_of_monthly_rent">
+														Repairs and Maintenance <span class="percentage-symbol">(%)</span>
+														<em class="icon icon-help has-tooltip" title=""></em>
+													</label>
+													<input class="variable-expense percentage" data-do-not-shadow="true" data-field-name="maintenance_percent_of_monthly_rent" type="text" name="calculators_property_information[buy_and_hold_result_attributes][maintenance_percent_of_monthly_rent]" id="calculators_property_information_buy_and_hold_result_attributes_maintenance_percent_of_monthly_rent">
+													<span class="variable-expense-dollar-amount">($0.00)</span>
+												</p>
+												<p class="w25pc float-left">
+													<label for="calculators_property_information_buy_and_hold_result_attributes_big_ticket_savings_percent_of_monthly_rent">
+														Capital Expenditures <span class="percentage-symbol">(%)</span>
+														<em class="icon icon-help has-tooltip" title=""></em>
+													</label>
+													<input class="variable-expense percentage" data-do-not-shadow="true" data-field-name="big_ticket_savings_percent_of_monthly_rent" type="text" name="calculators_property_information[buy_and_hold_result_attributes][big_ticket_savings_percent_of_monthly_rent]" id="calculators_property_information_buy_and_hold_result_attributes_big_ticket_savings_percent_of_monthly_rent">
+													<span class="variable-expense-dollar-amount">($0.00)</span>
+												</p>
+												<p class="w25pc float-left">
+													<label for="calculators_property_information_buy_and_hold_result_attributes_property_management_fee">
+														Property Management Fees <span class="percentage-symbol">(%)</span>
+														<em class="icon icon-help has-tooltip" title=""></em>
+													</label>
+													<input class="variable-expense percentage" data-do-not-shadow="true" data-field-name="property_management_fee" type="text" name="calculators_property_information[buy_and_hold_result_attributes][property_management_fee]" id="calculators_property_information_buy_and_hold_result_attributes_property_management_fee">
+													<span class="variable-expense-dollar-amount">($0.00)</span>
+												</p>
+												<br class="clear">
+												<h3 class="line">
+													<span>
+														Future Assumptions
+														<em class="icon icon-help has-tooltip" title=""></em>
+													</span>
+												</h3>
+												<p class="w30pc float-left">
+													<label for="calculators_property_information_buy_and_hold_result_attributes_income_increase_per_year">
+														Income Increases per Year, (%)
+														<em class="icon icon-help has-tooltip" title=""></em>
+													</label> <input class="percentage" type="text" name="null" id="calculators_property_information_buy_and_hold_result_attributes_income_increase_per_year"><input type="hidden" name="calculators_property_information[buy_and_hold_result_attributes][income_increase_per_year]" value="">
+												</p>
+												<p class="w30pc float-left">
+													<label for="calculators_property_information_buy_and_hold_result_attributes_property_value_increase_per_year">
+														Property Value Increases per Year
+														<em class="icon icon-help has-tooltip" title=""></em>
+													</label> <input class="percentage" type="text" name="null" id="calculators_property_information_buy_and_hold_result_attributes_property_value_increase_per_year"><input type="hidden" name="calculators_property_information[buy_and_hold_result_attributes][property_value_increase_per_year]" value="">
+												</p>
+												<p class="w30pc float-left">
+													<label for="calculators_property_information_buy_and_hold_result_attributes_expenses_increase_per_year">
+														Expenses Increases per Year
+														<em class="icon icon-help has-tooltip" title=""></em>
+													</label> <input class="percentage" type="text" name="null" id="calculators_property_information_buy_and_hold_result_attributes_expenses_increase_per_year"><input type="hidden" name="calculators_property_information[buy_and_hold_result_attributes][expenses_increase_per_year]" value="">
+												</p>
+												<br class="clear">
+												<p class="tip">Use of this calculator signifies your agreement to our <a target="_blank" href="/terms.html">Terms of Use</a> and the terms posted below.</p>
+												<br class="clear">
+												<p class="button-container previous-button">
+													<a href="#" class="button prev-step">Previous Step</a>
+												</p>
+												<p class="button-container next-button">
+													<input type="submit" name="commit" value="Calculate Results" class="button initiate" data-disable-with="Please wait...">
+												</p>
+											</fieldset>
+										</div>
+										<div id="calc_pro" class="modal-container" data-modal-display="true" style="display: none;"><div class="modal">
+											<header>
+												<h3>BiggerPockets Property Analysis Tools</h3>
+											</header>
+											<section>
+												<p>Thank you for using our rental property calculator. As a free member, you are only able to test out the calculator 4 times. To get full access, upgrade to BiggerPockets Pro or Plus today.</p>
+												<p>You have 4 more calculations left for free.</p>
+											</section>
+											<footer>
+												<a class="button initiate" data-modal-action="close" href="#">Use Calculator</a>
+												<a class="button purchase" href="/pro">Upgrade Your Account</a>
+											</footer>
+										</div></div>
+									</form>
+
+								</body>
+								</html>

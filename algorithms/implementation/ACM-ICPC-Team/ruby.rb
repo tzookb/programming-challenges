@@ -9,7 +9,7 @@ knowledgeArr = []
 
 
 1.upto(amountOfUsers) do
-	arr = gets.strip.split('').map(&:to_i)
+	arr = gets.strip   #.split('').map(&:to_i)
 	knowledgeArr.push(arr)
 end
 

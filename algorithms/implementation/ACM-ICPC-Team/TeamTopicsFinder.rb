@@ -1,9 +1,30 @@
 class TeamTopicsFinder
 	
-	@@maxAmountOfTopics = -1
+	@maxAmountOfTopics = -1
 	@countCouplesWhoKnowsMostTopics = 0
 
-	
+
+	def getNumberOfOnesInBinaryString(binaryStr)	
+		binaryStr.split('').map(&:to_i).reduce(:+)
+	end
+
+	def getIntegerValueFromBinaryString(binaryString)
+		
+		binaryString.to_i(2)
+	end
+
+	def getBinaryStringFromInteger(number)
+		number.to_s(2)
+	end
+
+	def andTwoIntegers(int1, int2)
+		int1&int2
+	end
+
+	def orTwoIntegers(int1, int2)
+		int1|int2
+	end
+
 	def getMergedArrayOfUsersTopics(topicsArr1, topicsArr2)
 		topicsArr1 = topicsArr1.split
 		topicsArr2 = topicsArr2.split
@@ -30,11 +51,19 @@ class TeamTopicsFinder
 	def checkUserWithOtherUsers(currentUserTopics, currentUserIndex, amountOfUsers, knowledgeArr)
 		(currentUserIndex+1).upto(amountOfUsers-1) do |otherUserIndex|
 
-			otherUserKnowledge = knowledgeArr[otherUserIndex]
+			otherUserKnowledge = self.getIntegerValueFromBinaryString(knowledgeArr[otherUserIndex])
 			
-			mergedKnoweledges = self.getMergedArrayOfUsersTopics(currentUserTopics, otherUserKnowledge)
+			#puts currentUserTopics
+			#puts otherUserKnowledge
+			
+			mergedKnoweledges = self.orTwoIntegers(currentUserTopics, otherUserKnowledge)
 
-			totalKnoweledges = self.getTopicsKnownInArray(mergedKnoweledges)
+			#puts mergedKnoweledges
+
+			totalKnoweledges = self.getNumberOfOnesInBinaryString(self.getBinaryStringFromInteger(mergedKnoweledges))
+
+			#puts totalKnoweledges
+			
 
 			self.handleTotalTopics(totalKnoweledges)
 			
@@ -50,7 +79,7 @@ class TeamTopicsFinder
 
 		0.upto(amountOfUsers-1) do |userIndex|
 	
-			userKnowledge = knowledgeArr[userIndex]
+			userKnowledge = self.getIntegerValueFromBinaryString(knowledgeArr[userIndex])
 
 			self.checkUserWithOtherUsers(userKnowledge, userIndex, amountOfUsers, knowledgeArr)
 			
