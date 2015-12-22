@@ -41,6 +41,7 @@ class TestSimpleNumber < Test::Unit::TestCase
   def test_NumToStr_5
   	numToStr = NumberToString.new
   	assert_equal('five', numToStr.getStringOfNumber(5))
+  	assert_equal('thirteen', numToStr.getStringOfNumber(13))
   end
  
 end
