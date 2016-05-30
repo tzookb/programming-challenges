@@ -28,7 +28,9 @@ let getPalindromeSteps = function(str) {
 };
 
 
-// this method is for hackerank tester not for the code resolution 
+/***********************************************************************
+***  this method is for hackerank tester not for the code resolution ***
+***********************************************************************/
 let processData = function(str) {
 	let chunks = str.split('\n');
     for (let i=1; i<chunks.length; i++) {
