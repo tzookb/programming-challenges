@@ -20,14 +20,11 @@ function getAmountOfPairsRecursive(k, nums) {
 			counter++;
 		}	
 	}
-	// console.log(nums);
-	// console.log(counter);
 	if (nums.length==0) {
 		return counter;
 	} else {
 		return counter + getAmountOfPairsRecursive(k, nums);
 	}
-	
 }
 
 console.log(getAmountOfPairsRecursive(3,[1,3,2,6,1,2]));
