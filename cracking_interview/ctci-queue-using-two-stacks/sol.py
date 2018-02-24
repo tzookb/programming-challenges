@@ -2,7 +2,7 @@ class MyStack(object):
     def __init__(self):
         self.holder = []
 
-    def peek(self):
+    def getAll(self):
         return self.holder
 
     def size(self):
@@ -20,10 +20,10 @@ class MyQueue(object):
         self.pops = MyStack()
     
     def peek(self):
-        pops = self.pops.peek()
+        pops = self.pops.getAll()
         if (len(pops) > 0):
             return pops[0]
-        pushes = self.pushes.peek()
+        pushes = self.pushes.getAll()
         if (len(pushes) > 0):
             return pushes[0]
         return None
