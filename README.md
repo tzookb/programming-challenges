@@ -8,7 +8,7 @@ but you can always search on github search bar. I always name the exercises as t
 name in the challenges site.
 
 ## HackerRank
-- [counting-valleys](./hackerrank/cracking_inteview/counting-valleys/readme.md)
+- [counting-valleys](hackerrank/cracking_interview/counting-valleys/readme.md)
 ### * It would be great to here from you, advices, questions etc...
 
 you can contact me here threw "issuing an issue" or emailing me or [visit my blog](http://tzookb.com/)
