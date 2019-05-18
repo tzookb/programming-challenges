@@ -1,18 +1,20 @@
 function countingValleys(n, s) {
-    //dont care about "n"
-    let level = 0;
-    let valleys = 0;
-    let isNewVally = false;
+  const steps = s.split('');
+  let level = 0;
+  let isNewValley = false;
+  let valleys = 0;
 
-    s.split('').map(step => {
-        level = step === 'U' ? level + 1 : level -1;
-        if (level === -1 && !isNewVally) {
-            isNewVally = true;
-        }
-        if (level === 0 && isNewVally) {
-            isNewVally = false;
-            valleys++;
-        }
-    })
-    return valleys;
+  steps.map(step => {
+    level = step === 'U' ? level + 1 : level -1;
+    if (level < 0 && !isNewValley) {
+      isNewValley = true;
+    }
+    if (level === 0 && isNewValley) {
+      isNewValley = false;
+      valleys++;
+    }
+  })
+  return valleys;
 }
+
+export default countingValleys;

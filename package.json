@@ -1,0 +1,30 @@
+{
+  "name": "challenges",
+  "version": "1.0.0",
+  "description": "I loved doing some sharp programming challenges. I started from Hackerrank but then found so many other great spots to play with.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tzookb/programming-challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tzookb/programming-challenges/issues"
+  },
+  "homepage": "https://github.com/tzookb/programming-challenges#readme",
+  "devDependencies": {
+    "babel-jest": "^24.8.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.8.0",
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4"
+  }
+}
