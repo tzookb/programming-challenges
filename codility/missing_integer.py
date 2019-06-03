@@ -1,15 +1,17 @@
+import math
+
 def solution(A):
-    seen = [False] * len(A)
+  A.sort()
+  arr = list(dict.fromkeys(A))
+  nextItem = 1
+  for a in arr:
+    if a > 0:
+      print(nextItem, a)
+      if nextItem == a:
+        nextItem += 1
+      else:
+        return nextItem
 
-    for value in A:
-        if 0 < value <= len(A):
-            seen[value-1] = True
- 
-    for idx in xrange(len(seen)):
-        if seen[idx] == False:
-            return idx + 1
- 
-    return len(A)+1
-res = solution([-11,3,4,5,7])
 
-print res
+res = solution([1, 3, 6, 4, 1, 2])
+print(res)

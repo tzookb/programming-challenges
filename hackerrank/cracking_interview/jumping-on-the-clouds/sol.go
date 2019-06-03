@@ -17,13 +17,10 @@ func jumpingOnClouds(c []int32) int32 {
 			return jumps
 		}
 		twoStepIdx := cidx + 2
-		oneStepIdx := cidx + 1
+		cidx++
 		if twoStepIdx <= eidx && c[twoStepIdx] == 0 {
-			jumps++
-			cidx = twoStepIdx
-			continue
+			cidx++
 		}
 		jumps++
-		cidx = oneStepIdx
 	}
 }
