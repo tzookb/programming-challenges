@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	arr := []int{}
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8}
 	k := 3
 	res := Solution(arr, k)
 	fmt.Println(res)
@@ -17,9 +17,9 @@ func Solution(A []int, K int) []int {
 		return A
 	}
 	moves := K % arrLen
-	copiedA := A[:]
-	for i := 0; i < moves; i++ {
-		copiedA = append(copiedA[arrLen-1:], copiedA[:arrLen-1]...)
-	}
-	return copiedA
+
+	return append(
+		A[arrLen-moves:arrLen],
+		A[0:arrLen-1]...,
+	)
 }
