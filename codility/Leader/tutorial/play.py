@@ -34,14 +34,13 @@ def get_leader(arr):
     for v in arr:
         if s.len() == 0:
             s.push(v)
-            print(s.stack)
+            # print(s.stack)
             continue
         if s.view_last() != v:
             s.pop()
             continue
         s.push(v)
-        print(s.stack)
-
+        # print(s.stack)
     return s
 
 res = get_leader(ar)
