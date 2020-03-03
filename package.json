@@ -4,7 +4,9 @@
   "description": "I loved doing some sharp programming challenges. I started from Hackerrank but then found so many other great spots to play with.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "genmd": "node readmegen/main.js",
+    "pre-push": "npm run genmd"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4"
+    "@babel/preset-env": "^7.4.4",
+    "husky": "^4.2.3"
   }
 }
