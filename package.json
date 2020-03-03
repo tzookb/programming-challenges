@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --watch",
     "genmd": "node readmegen/main.js",
-    "precommit": "npm run genmd"
+    "pre-commit": "npm run genmd",
+    "pre-push": "npm run genmd"
   },
   "repository": {
     "type": "git",
