@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
-    "genmd": "node readmegen/main.js"
+    "genmd": "node readmegen/main.js && git add ."
   },
   "husky": {
     "hooks": {
