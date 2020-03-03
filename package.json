@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
-    "genmd": "node readmegen/main.js",
-    "pre-commit": "npm run genmd",
-    "pre-push": "npm run genmd"
+    "genmd": "node readmegen/main.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run genmd",
+      "pre-push": "npm run genmd"
+    }
   },
   "repository": {
     "type": "git",
