@@ -34,6 +34,7 @@
 - [compare-the-triplets](hackerrank/compare-the-triplets)
 - [count-triplets-1](hackerrank/count-triplets-1)
 - [cracking_interview](hackerrank/cracking_interview)
+- [ctci-array-left-rotation](hackerrank/ctci-array-left-rotation)
 - [cut-the-sticks](hackerrank/cut-the-sticks)
 - [divisible-sum-pairs](hackerrank/divisible-sum-pairs)
 - [drawing-book](hackerrank/drawing-book)

@@ -1,24 +1,21 @@
-import math
-
 def solution(num):
-  digits = list(map(int, list('{0:b}'.format(num))))
+    digits = list(map(int, list('{0:b}'.format(num))))
+    maxGap = 0
+    curGap = 0
 
-  canCount = False
-  maxGap = 0
-  curGap = 0
-
-  for idx, dig in enumerate(digits):
-    if dig == 1:
-      canCount = True
-      if curGap > maxGap:
+    for dig in digits:
+        if dig == 1:
+            if curGap > maxGap:
+                maxGap = curGap
+            curGap = 0
+        else:
+            curGap += 1
+    if curGap > maxGap:
         maxGap = curGap
-      curGap = 0
-    else:
-      if canCount:
-        curGap += 1
+    return maxGap
 
-  return maxGap
 
 res = solution(561892)
 # res = solution(292)
+# res = solution(529)
 print(res)

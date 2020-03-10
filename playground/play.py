@@ -1,7 +1,6 @@
-a = ("John", "Charles", "Mike")
-b = ("Jenny", "Christy", "Monica", "Vicky")
-
-x = zip(a, b)
-
-for z,y in x:
-    print(z)
+x = 2
+y = 2
+n = 10
+print ([
+    [ i, j] for i in range( x + 1) for j in range( y + 1) if ( ( i + j ) != n )
+])
