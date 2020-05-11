@@ -1,33 +1,33 @@
 import math
 import statistics
 import bisect
+from heapq import heappop, heappush, heapify
 
+class MaxMinHeap:
+    def __init__(self, type):
+        self.arr = []
+        self.type = type
+    def push(self, item):
+        heappush(self.arr, item)
+    def push(self, item):
+        heappush(self.arr, item)
+    
 
-class SortedArray():
-    def __init__(self, array):
-        self.array = sorted(array)
-
-    def add(self, x):
-        # Assumes array is sorted, and keeps it sorted
-        bisect.insort(self.array, x)
-
-    def remove(self, x):
-        # Assumes array is sorted, and keeps it sorted
-        del self.array[bisect.bisect_left(self.array, x)]
-
-    def median(self):
-        return statistics.median(self.array)
+maxHeap = []
+minHeap = []
 
 
 def activityNotifications(expenditure, d):
     notifications = 0
     totalDays = len(expenditure)
     pastExpenditure = expenditure[0:d]
-
-    sa = SortedArray(pastExpenditure)
+    sa = []
+    for item in pastExpenditure:
+        heappush(sa, item)
+    
     for i in range(d, totalDays):
         cur = expenditure[i]
-        median = sa.median()
+        median = statistics.median(sa)
         if cur >= median*2:
             notifications += 1
         
