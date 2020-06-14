@@ -3,9 +3,13 @@
 ## Leetcode
 
 - [add-two-numbers](leetcode/add-two-numbers)
+- [best-time-to-buy-and-sell-stock-ii](leetcode/best-time-to-buy-and-sell-stock-ii)
+- [hamming-distance](leetcode/hamming-distance)
 - [longest-common-prefix](leetcode/longest-common-prefix)
+- [longest-substring-without-repeating-characters](leetcode/longest-substring-without-repeating-characters)
 - [maximum-depth-of-binary-tree](leetcode/maximum-depth-of-binary-tree)
 - [merge-two-sorted-lists](leetcode/merge-two-sorted-lists)
+- [nim-game](leetcode/nim-game)
 - [palindrome-number](leetcode/palindrome-number)
 - [remove-duplicates-from-sorted-array](leetcode/remove-duplicates-from-sorted-array)
 - [reverese-integer](leetcode/reverese-integer)
@@ -14,6 +18,7 @@
 - [two-sum](leetcode/two-sum)
 - [valid-parentheses](leetcode/valid-parentheses)
 - [valid-sudoku](leetcode/valid-sudoku)
+- [validate-binary-search-tree](leetcode/validate-binary-search-tree)
 
 ## HackerRank
 
@@ -71,5 +76,6 @@
 - [the-hurdle-race](hackerrank/the-hurdle-race)
 - [the-love-letter-mystery](hackerrank/the-love-letter-mystery)
 - [the-time-in-words](hackerrank/the-time-in-words)
+- [tree-height-of-a-binary-tree](hackerrank/tree-height-of-a-binary-tree)
 - [two-strings](hackerrank/two-strings)
 - [utopian-tree](hackerrank/utopian-tree)

@@ -1,25 +1,22 @@
-function getSocksPairs(socks) {
-	var counters = {};
-	var pairs = 0;
+function sockMerchant(n, socks) {
+  let countPairs = 0;
+  const sockCounter = {};
 
-	for (var i=0 ; i<socks.length ; i++) {
-		var cur = socks[i];
-
-		if (cur in counters) {
-			counters[cur]++;
-		} else {
-			counters[cur] = 1;
-		}
-	}
-
-	for (var counterKey in counters) {
-		pairs += Math.floor(counters[counterKey]/2);
-	}
-	return pairs;
+  socks.map(sock => {
+    if (!(sock in sockCounter)) {
+      sockCounter[sock] = 0
+    }
+    sockCounter[sock]++
+  })
+  
+  for (let sockColor in sockCounter) {
+    const socksAmount = sockCounter[sockColor]
+    const amountOfPairs = Math.floor(socksAmount/2)
+    countPairs += amountOfPairs
+  }
+  return countPairs
 }
 
 console.log(
-	getSocksPairs(
-		"10 20 20 10 10 30 50 10 20".split(" ").map(sock => parseInt(sock))
-	)
+	getSocksPairs([10, 20, 20, 10, 10, 30, 50, 10, 20])
 );
