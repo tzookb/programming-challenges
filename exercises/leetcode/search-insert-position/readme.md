@@ -2,7 +2,7 @@
 title: LeetCode - search insert position challenge solution
 author: tzookb
 type: post
-date: 2020-07-06T13:50:08+00:00
+date: 2020-07-06T21:22:08+00:00
 url: /leetcode/search-insert-position
 desc: leetcode search-insert-position exercise
 source: https://leetcode.com/problems/search-insert-position/
