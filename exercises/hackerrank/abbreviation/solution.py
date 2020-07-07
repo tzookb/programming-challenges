@@ -1,31 +1,33 @@
+def abbrev(a, b):
+    if len(a) + len(b) == 0:
+        return True
+    if len(a) == 0 and len(b) > 0:
+        return False
+    if len(a) > 0 and len(b) == 0:
+        if a[0].isupper():
+            return False
+        return abbrev(a[1:], b)
+
+    av = a[0]
+    bv = b[0]
+
+    if av.islower():
+        removeFromA = abbrev(a[1:], b)
+        capitalFromA = av.upper() == bv and abbrev(a[1:], b[1:])
+
+        return removeFromA or capitalFromA
+
+    if av.isupper() and av == bv:
+        return abbrev(a[1:], b[1:]) 
+
+    return False
+
 def abbreviation(a, b):
-    aIdx = bIdx = 0
-    while aIdx < len(a) and bIdx < len(b):
-        av = a[aIdx]
-        bv = b[bIdx]
-        if av.lower() == bv.lower():
-            aIdx += 1
-            bIdx += 1
-            continue
-        if av == av.lower():
-            aIdx += 1
-        else:
-            break
+    if abbrev(a, b):
+        return "YES"
+    return "NO"
 
-    if bIdx != len(b):
-        return "NO"
-    for left in a[aIdx:]:
-        if left.lower() != left:
-            return "NO"
-
-    return "YES"
-
-
-a = "beFgH"
-b = "EFG"
+a = "LLlllLLL"
+b = "LLLL"
 res = abbreviation(a, b)
 print(res)
-
-
-
-
