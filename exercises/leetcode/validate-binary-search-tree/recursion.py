@@ -4,8 +4,6 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
-# TODO
 class Solution(object):
     def isValidBST(self, root):
         return self.isValidBSThelper(root, None, None)
