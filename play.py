@@ -1,22 +1,31 @@
-from functools import reduce
+from typing import List
+from functools import cmp_to_key
 
-5000
-def gcd(a, b):
-    while b != 0:
-        a, b = b , a % b
-    return a
-    if b == 0:
-        return a
-    return gcd(b, a%b)
 
-def generalizedGCD(num, arr):
-    def red(x, y):
-        return gcd(x, y)
-    product = reduce(red, arr)
-    print(product)
+weirdList = [
+    {
+        "a": 1,
+        "b": 3,
+    },
+    {
+        "a": 1,
+        "b": 2,
+    },
+    {
+        "a": 2,
+        "b": 1,
+    },
+]
+def owncomp(a, b):
+    if a["a"] > b["a"]:
+        return 1
+    elif a["a"] < b["a"]:
+        return -1
+    
+    if a["b"] > b["b"]:
+        return 1
+    else:
+        return -1
 
-# generalizedGCD(1, [
-#     6,12,15,21
-# ])
-
-print(gcd(10, 20))
+rs = sorted(weirdList, key=cmp_to_key(owncomp))
+print(rs)
