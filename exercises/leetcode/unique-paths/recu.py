@@ -22,5 +22,4 @@ class Solution:
             return res
         
         res = dfs(0, 0, m, n)
-        print(res)
         return res
