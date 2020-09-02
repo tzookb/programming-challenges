@@ -1,4 +1,10 @@
-paths =[[1, 2, 5], [1, 3]]
-res = ["->".join([str(pathStep) for pathStep in pathItems]) for pathItems in paths]
-# res = list(map(lambda x: "->".join(str(x)), arr))
-print(res)
+class Xxx:
+    def __init__(self):
+        self.name = "asd"
+
+ob = {}
+x = Xxx()
+
+print(ob)
+ob["x": x]
+print(ob)
