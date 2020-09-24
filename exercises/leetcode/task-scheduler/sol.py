@@ -4,36 +4,28 @@ from heapq import heapify, heappop, heappush
 
 class Solution:
     def leastInterval(self, tasks: List[str], n: int) -> int:
-        counters = collections.Counter()
+        counters = [0] * 26
         for t in tasks:
-            counters[t] += 1
+            counters[ord(t) - ord("A")] += 1
+        counters.sort(reverse=True)
 
-        heap = []
-        # heapify(heap)
-        for cnt in counters:
-            heappush(heap, -counters[cnt])
+        tasks_count = 0
+        idles = 0
+
+        for count in counters:
+            if count == 0:
+                break
+            tasks_count += count
+            min_idles = (count - 1) * n
+            print(min_idles)
+            total_min_time = min_idles + count
+            if total_min_time < idles:
+                idles -= count
         
-        waitStack = [None] * (n+1)
-
-        count = 0
-
-        while heap or waitStack:
-
-            if waitStack:
-                poppedVal = waitStack.pop(0)
-                if poppedVal:
-                    heappush(heap, -poppedVal)
-
-            if heap:
-                count += 1
-                popped = -1 * heappop(heap)
-                popped -= 1
-                if popped > 0:
-                    waitStack.append(popped)
-            
-        print(count)
-
+        print(tasks_count + idles)
         
+
+
 s = Solution()
 res = s.leastInterval(["A","A","A","B","B","B"], 2)
 # res = s.connect_numbers("42/3")

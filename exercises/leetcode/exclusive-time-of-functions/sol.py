@@ -2,31 +2,31 @@ from typing import List
 
 class Solution:
     def exclusiveTime(self, n: int, logs: List[str]) -> List[int]:
-        stack = [(-1, 0)]
-        start = 0
-        ans = []
+        stack = []
+        ans = [0] * n
 
         for log in logs:
-            aid, action, time = log.split(":")
-            time = int(time)
-
-            prev = stack.pop(0)
+            log = log.split(":")
+            aid = int(log[0])
+            action = log[1]
+            time  = int(log[2])
 
             if action == "start":
-                if prev[0] != aid:
-                    workTime = prev[1] + time - start
-                    stack.append((prev[0], workTime))
-                    stack.append((aid, 0))
-                else:
-                    stack.append((aid, 0))
-
-                start = time - 1
+                if stack:
+                    prev = stack.pop()
+                    ans[prev[0]] += time - prev[1]
+                    stack.append((prev[0], time))
+                stack.append((aid, time))
             else:
-                ans.append(prev[1] + time - start)
-                start = time + 1
+                time += 1
+                prev = stack.pop()
+                ans[prev[0]] += time - prev[1]
+                if stack:
+                    prev = stack.pop()
+                    stack.append((prev[0], time))
+        return ans
 
-        return ans[::-1]
 s = Solution()
-logs = ["0:start:0","0:start:2","0:end:5","0:end:6"]
+logs = ["0:start:0","1:start:2","1:end:5","0:end:6"]
 res = s.exclusiveTime(2, logs)
 print(res)
