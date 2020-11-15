@@ -1,24 +1,32 @@
+from typing import List
+
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        return s == s[::-1]
+    def binarySearch(self, nums: List[int], target: int, pushTo) -> List[int]:
+        start = 0
+        end = len(nums) - 1
+        foundItem = -1
+        while start <= end:
+            mid = start + (end - start) // 2
+            if nums[mid] == target:
+                foundItem = mid
+                if pushTo == "left":
+                    end = mid - 1
+                else:
+                    start = mid + 1
+            elif nums[mid] > target:
+                end = mid - 1
+            else:
+                start = mid + 1
+        return foundItem
 
-    def validPalindrome(self, s: str) -> bool:
-        i = 0
-        j = len(s) - 1
-
-        while i < j:
-            a = s[i]
-            b = s[j]
-            if a != b:
-                left = s[i:j+1]
-                return (
-                    self.isPalindrome(left[1:])
-                    or
-                    self.isPalindrome(left[0:-1])
-                )
-            i += 1
-            j -= 1
-        return True
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        leftFound = self.binarySearch(nums, target, "left")
+        if leftFound == -1:
+            return [-1, -1]
+        rightFound = self.binarySearch(nums, target, "right")
+        
+        return [leftFound, rightFound]
 
 s = Solution()
-s.validPalindrome('abecddcba')
+res = s.searchRange([5,7,7,8,8,8,8,8,8,10], 8)
+print(res)
