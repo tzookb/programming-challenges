@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def twoSum(self, nums: List[int], target) -> List[List[int]]:
         nums.sort()
@@ -30,20 +31,20 @@ class Solution:
         prevNum = None
         for idx in range(len(nums) - 1):
             num = nums[idx]
-            if num >= 0:
+            if num > 0:
                 break
             if num == prevNum:
                 continue
             prevNum = num
             pairs = self.twoSum(nums[idx+1:], 0 - num)
-            print(num, pairs)
             for pair in pairs:
                 sols.append([num] + pair)
 
         return sols
 
 
-nums = [-2,0,0,2,2]
+
+nums = [-1,0,1,2,-1,-4]
 s = Solution()
 
 res = s.threeSum(nums)

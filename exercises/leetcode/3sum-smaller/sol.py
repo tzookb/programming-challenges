@@ -1,29 +1,36 @@
 from typing import List
 
+class Solution:
 
-def countTriplets(arr, sum):
-    results = []
-    n = len(arr)
-
-    for i in range(0, n - 2):
-        j = i + 1
-        k = n - 1
-
-        while(j < k):
-            if (arr[i]+arr[j]+arr[k] >= sum):
-                k = k-1
+    def twoSumSmaller(self, numbers: List[int], target: int) -> List[int]:
+        start = 0
+        end = len(numbers) - 1
+        count = 0
+        while start < end:
+            total = numbers[start] + numbers[end]
+            if total < target:
+                count += end - start 
+                start += 1
             else:
-                results.append([arr[i], arr[j], arr[k]])
-                j = j+1
+                end -= 1
+        return count
 
-    return results
+    def threeSumSmaller(self, nums: List[int], target: int) -> int:
+        result = 0
+        nums.sort()
+        for i in range(len(nums)-2):
+            a = nums[i]
+            leftArr = nums[i+1:]
+            curTarget = target - a
+            curCount = self.twoSumSmaller(leftArr, curTarget)
+            result += curCount
+        return result
 
 
-nums = [-2, 0, 1, 3]
-target = 2
-# s = Solution()
-# res = s.threeSumSmaller(nums, target)
-res = countTriplets(nums, target)
-# res = s.twoSumSmaller(nums, target)
+nums = [3,1,0,-2]
+target = 4
+s = Solution()
+res = s.threeSumSmaller(nums, target)
+# res = s.twoSumSmaller([0,1,3], 4)
 # res = s.getAllPairs(nums)
 print(res)
