@@ -1,17 +1,16 @@
-class Solution(object):
-    def deleteDuplicates(self, head):
-        if head == None:
-            return head
-        
-        current = head.next
-        prev = head
-        
-        while current != None:
-            if current.val == prev.val:
-                prev.next = current.next
-                current = current.next
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        item = head
+
+        while item and item.next:
+            if item.val == item.next.val:
+                item.next = item.next.next
             else:
-                current = current.next
-                prev = prev.next
-        
+                item = item.next
+            
         return head

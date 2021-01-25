@@ -47,11 +47,5 @@ class Solution:
             cur[0] += steps[direction][0]
             cur[1] += steps[direction][1]
 
-            self.print(arr)
             step += 1
         return arr
-
-
-s = Solution()
-res = s.generateMatrix(3)
-print(res)

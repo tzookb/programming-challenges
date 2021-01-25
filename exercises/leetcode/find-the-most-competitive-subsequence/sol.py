@@ -27,4 +27,5 @@ class Solution:
 s = Solution()
 res = s.mostCompetitive([3,5,2,1,2,4,5,1,9], 3)
 # res = s.mostCompetitive([3,5,2,6,1,8,4], 2)
+
 print(res)
