@@ -1,54 +1,52 @@
-from typing import List
-class Solution:
-    def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
-        graph, email_to_name_mapping = self.getGraphAndNameMapper(accounts)
-        results = []
-        visited = {}
+class Trie:
 
-        for ele in graph:
-            if ele in visited:
-                continue
-
-            email_owner_name = ''
-            queue = [ele]
-            curRes = []
-
-            while queue:
-                node = queue.pop(0)
-                if node in visited:
-                    continue
-
-                if isinstance(node, str):
-                    email_owner_name = email_to_name_mapping[node]
-                    curRes.append(node)
-
-                for child in graph[node]:
-                    queue.append(child)
-
-                visited[node] = True
-
-            curRes.sort()
-            curRes = [email_owner_name] + curRes
-            results.append(curRes)
-
-        return results
-
-    def getGraphAndNameMapper(self, accounts: List[List[str]]):
-        email_to_name_mapping = {}
-        graph = {}
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        self.data = {}
         
-        for idx, account_data in enumerate(accounts):
-            username = account_data[0]
-            graph[idx] = {}
-            for email in account_data[1:]:
-                graph[idx][email] = True
-                if email not in graph:
-                    graph[email] = {}
-                graph[email][idx] = True
 
-                email_to_name_mapping[email] = username
-        return (graph, email_to_name_mapping)
+    def insert(self, word: str) -> None:
+        """
+        Inserts a word into the trie.
+        """
+        chars = list(word)
+        cur_step = self.data
+        for char in chars:
+            if char not in cur_step:
+                cur_step[char] = {}
+            cur_step = cur_step[char]
+        cur_step["##"] = True
+        
 
-accounts = [["John","johnsmith@mail.com","john_newyork@mail.com"],["John","johnsmith@mail.com","john00@mail.com"],["Mary","mary@mail.com"],["John","johnnybravo@mail.com"]]
-s = Solution()
-s.accountsMerge(accounts)
+    def search(self, word: str) -> bool:
+        """
+        Returns if the word is in the trie.
+        """
+        cur_step = self.startsWith(word)
+        if cur_step is False:
+            return False
+        return "##" in cur_step
+        
+
+    def startsWith(self, prefix: str) -> bool:
+        """
+        Returns if there is any word in the trie that starts with the given prefix.
+        """
+        chars = list(prefix)
+        cur_step = self.data
+        for char in chars:
+            if char not in cur_step:
+                return False
+            cur_step = cur_step[char]
+        return cur_step
+        
+
+
+# Your Trie object will be instantiated and called as such:
+obj = Trie()
+obj.insert("hey")
+obj.insert("hell")
+print(obj.search("he"))
+print(obj.startsWith("ne"))
