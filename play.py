@@ -1,33 +1,26 @@
 from typing import List
+
 class Solution:
-    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
-        calc = []
-        size = len(mat) * len(mat[0])
-        visited = {}
-        for r in range(len(mat)):
-            for c in range(len(mat[0])):
-                if mat[r][c] == 0:
-                    calc.append((r, c, 0))
+    def letterCasePermutation(self, s: str) -> List[str]:
+        sols = [""]
 
-        while calc:
-            r, c, closest = calc.pop(0)
-            key = f"{r}-{c}"
-            if r < 0 or r >= len(mat):
-                continue
-            if c < 0 or c >= len(mat[0]):
-                continue
-            if key in visited:
-                continue
-            visited[key] = True
-            mat[r][c] = closest
-            calc.append((r + 1, c, closest + 1))
-            calc.append((r - 1, c, closest + 1))
-            calc.append((r, c + 1, closest + 1))
-            calc.append((r, c - 1, closest + 1))
+        for c in s:
+            options = []
+            if c.isalpha():
+                options.append(c.lower())
+                options.append(c.upper())
+            else:
+                options.append(c)
+            
+            next_sols = []
+            for sol in sols:
+                for option in options:
+                    next_sols.append(sol + option)
+            sols = next_sols
+        
+        return sols
 
-        return mat
 
 s = Solution()
-mat = [[0,0,0],[0,1,0],[0,0,0]]
-res = s.updateMatrix(mat)
+res = s.letterCasePermutation("3z4")
 print(res)
