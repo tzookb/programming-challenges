@@ -1,3 +1,4 @@
+from typing import List
 class TreeNode:
     def __init__(self, x):
         self.val = x
@@ -18,3 +19,15 @@ def tree_to_arr(tree):
         stack.append(cur.left)
         stack.append(cur.right)
     return stack
+
+# def arr_to_tree(arr: List[int]):
+#     if not arr:
+#         return None
+#     head = TreeNode(arr.pop(0))
+    
+#     stack = [head]
+#     while arr:
+#         cur_val = arr.pop(0)
+#         cur = TreeNode(cur_val)
+#         cur_tree = stack.pop
+#     return stack

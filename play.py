@@ -1,26 +1,45 @@
 from typing import List
 
 class Solution:
-    def letterCasePermutation(self, s: str) -> List[str]:
-        sols = [""]
+    def findRLEArray(self, encoded1: List[List[int]], encoded2: List[List[int]]) -> List[List[int]]:
+        result = []
 
-        for c in s:
-            options = []
-            if c.isalpha():
-                options.append(c.lower())
-                options.append(c.upper())
+        for a,b in zip(self.stepped(encoded1), self.stepped(encoded2)):
+            result.append(a * b)
+
+        return result
+
+    def stepped(self, encoded: List[List[int]]) -> int:
+        for step in encoded:
+            [val, mult] = step
+            i = 0
+            while i < mult:
+                yield val
+                i += 1
+
+    def compress(self, arr: List[int]) -> List[List[int]]:
+        till_now = None
+        count = 0
+        result = []
+        for cur in arr:
+            if cur != till_now:
+                if count > 0:
+                    result.append([till_now, count])
+                count = 1
+                till_now = cur
             else:
-                options.append(c)
-            
-            next_sols = []
-            for sol in sols:
-                for option in options:
-                    next_sols.append(sol + option)
-            sols = next_sols
-        
-        return sols
+                count += 1
+
+        if count > 0:
+            result.append([till_now, count])
+
+        return result
 
 
 s = Solution()
-res = s.letterCasePermutation("3z4")
+enc1 = [[1,4]]
+enc2 = [[2,2], [5,2]]
+res = s.findRLEArray(enc1, enc2)
+res = s.compress([1,1,1,1,1,1,2,2,2,3])
+# res = s.findDuplicate([1,2,2,3,4])
 print(res)
