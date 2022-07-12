@@ -11,22 +11,24 @@ type ListNode struct {
 func main() {
 
 }
+func permute(nums []int) [][]int {
+	var sol [][]int
 
-func reverseList(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return head
+	if len(nums) <= 1 {
+		sol = append(sol, nums)
+		return sol
 	}
 
-	var prev *ListNode = head
-	var cur *ListNode = head.Next
-	prev.Next = nil
-
-	for cur != nil {
-		var nextCur *ListNode = cur.Next
-		cur.Next = prev
-		prev = cur
-		cur = nextCur
+	for _, num := range nums {
+		leftover := nums[1:]
+		permute(leftover)
+		for _, curnum := range leftover {
+			permute()
+		}
 	}
 
-	return prev
+	initialPerm := []int{}
+	dfs(initialPerm, nums)
+
+	return sol
 }

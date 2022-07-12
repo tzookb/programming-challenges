@@ -1,9 +1,8 @@
-
 from typing import List, Optional
 
 class Solution:
-    def totalNQueens(self, n: int) -> int:
-        final = {}
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        final = []
         covered = {
             "rows": {},
             "cols": {},
@@ -24,13 +23,9 @@ class Solution:
                 return True
             return False
 
-        def createKeyFromPlaceQueens(arr):
-            return "_".join(map(lambda x: str(x), arr))
-
         def backTrack(placedQueens):
             if len(placedQueens) == n:
-                key = createKeyFromPlaceQueens(placedQueens)
-                final[key] = True
+                final.append(placedQueens[::])
                 return
             
             row = len(placedQueens)
@@ -55,9 +50,13 @@ class Solution:
 
         backTrack([])
 
-        return len(final)
+        return list(map(lambda x: self.buildQueenRepresentation(x) , final))
     
     def buildQueenRepresentation(self, arr):
         def queenPosToStr(pos):
             return "." * pos + "Q" + "." * (len(arr) - pos - 1)
         return list(map(queenPosToStr, arr))
+
+s = Solution()
+res = s.solveNQueens(4)
+print(res)
