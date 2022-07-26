@@ -324,3 +324,9 @@
 - [tree-height-of-a-binary-tree](exercises/hackerrank/tree-height-of-a-binary-tree)
 - [two-strings](exercises/hackerrank/two-strings)
 - [utopian-tree](exercises/hackerrank/utopian-tree)
+
+## HackerRank
+
+- [rotary-lock](exercises/facebookrecruiting/rotary-lock)
+- [scoreboard-inference-1](exercises/facebookrecruiting/scoreboard-inference-1)
+- [stack-stabilization-i](exercises/facebookrecruiting/stack-stabilization-i)
