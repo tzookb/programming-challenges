@@ -6,7 +6,7 @@ const readdir = util.promisify(fs.readdir);
 //joining path of directory 
 const mdFile = path.join(__dirname, '..', 'readme.md');
 
-const directories = ['exercises/leetcode', 'exercises/hackerrank'];
+const directories = ['exercises/leetcode', 'exercises/hackerrank', 'exercises/facebook'];
 
 
 const getExercises = async function(mainFolderName) {

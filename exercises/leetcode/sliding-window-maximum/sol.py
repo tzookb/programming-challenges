@@ -1,34 +1,32 @@
-from typing import List
-import collections
+from typing import Counter, List, Optional
 
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         res = []
-        max_till = []
-        cur_max = float("-inf")
+        queued = []
 
-        for num in nums:
-            cur_max = max(cur_max, num)
-            max_till.append(cur_max)
-        
-        i = k - 1
-        while i < len(nums):
-            res_max = max_till[i]
-            res.append(res_max)
-            i += 1
+        for idx, num in enumerate(nums):
+            while queued and queued[-1][1] <= num:
+                queued.pop()
             
-        return res
-    
-[1, -1]
-[1,  1]
-[1, -1]
+            while queued and (idx - queued[0][0]) >= k:
+                queued.pop(0)
 
-[1,3,-1,-3,5,3,6,7]
-[1,3,3,3,5,5,6,7]
-[]
+            queued.append((idx, num))
+
+            if idx + 1 < k:
+                continue
+            if len(queued) > 1:
+                res.append(queued[0][1])
+            else:
+                res.append(num)
+
+        return res
+
+
+nums = [10,1,1,1,1,1,1]
+k = 3
+
 s = Solution()
-res = s.maxSlidingWindow(
-    [1,3,-1,-3,5,3,6,7], 3
-    # [1,3,-1,-3, 2], 3
-)
+res = s.maxSlidingWindow(nums, k)
 print(res)
