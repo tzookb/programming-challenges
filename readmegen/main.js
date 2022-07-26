@@ -51,12 +51,17 @@ const final = async _ => {
   const hackerrankExercise = await getExercises(directories[1])  
   const hackMd = createMdSection('HackerRank', hackerrankExercise)
 
+  const facebookExercise = await getExercises(directories[1])  
+  const facebookMd = createMdSection('HackerRank', facebookExercise)
+
   const finalMd = [
     '# Code Katas',
     '',
     ...leetMd,
     '',
     ...hackMd,
+    '',
+    ...facebookMd
   ]
 
   createMdFile(finalMd)
