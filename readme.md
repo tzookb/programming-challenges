@@ -65,7 +65,6 @@
 - [find-largest-value-in-each-tree-row](exercises/leetcode/find-largest-value-in-each-tree-row)
 - [find-peak-element](exercises/leetcode/find-peak-element)
 - [find-smallest-common-element-in-all-rows](exercises/leetcode/find-smallest-common-element-in-all-rows)
-- [find-smallest-common-element-in-all-rows copy](exercises/leetcode/find-smallest-common-element-in-all-rows copy)
 - [find-the-duplicate-number](exercises/leetcode/find-the-duplicate-number)
 - [find-the-most-competitive-subsequence](exercises/leetcode/find-the-most-competitive-subsequence)
 - [find-the-town-judge](exercises/leetcode/find-the-town-judge)
@@ -324,6 +323,17 @@
 - [tree-height-of-a-binary-tree](exercises/hackerrank/tree-height-of-a-binary-tree)
 - [two-strings](exercises/hackerrank/two-strings)
 - [utopian-tree](exercises/hackerrank/utopian-tree)
+
+## Codesignal
+
+- [addTwoHugeNumbers](exercises/codesignal/addTwoHugeNumbers)
+- [firstDuplicate](exercises/codesignal/firstDuplicate)
+- [firstNotRepeatingCharacter](exercises/codesignal/firstNotRepeatingCharacter)
+- [isCryptSolution](exercises/codesignal/isCryptSolution)
+- [isListPalindrome](exercises/codesignal/isListPalindrome)
+- [removeKFromList](exercises/codesignal/removeKFromList)
+- [rotateImage](exercises/codesignal/rotateImage)
+- [sudoku2](exercises/codesignal/sudoku2)
 
 ## Facebook Recruiting
 

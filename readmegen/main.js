@@ -6,7 +6,12 @@ const readdir = util.promisify(fs.readdir);
 //joining path of directory 
 const mdFile = path.join(__dirname, '..', 'readme.md');
 
-const directories = ['exercises/leetcode', 'exercises/hackerrank', 'exercises/facebookrecruiting'];
+const directories = [
+  'exercises/leetcode',
+  'exercises/hackerrank',
+  'exercises/facebookrecruiting',
+  'exercises/codesignal',
+];
 
 
 const getExercises = async function(mainFolderName) {
@@ -51,6 +56,9 @@ const final = async _ => {
   const hackerrankExercise = await getExercises(directories[1])  
   const hackMd = createMdSection('HackerRank', hackerrankExercise)
 
+  const codesignalExercise = await getExercises(directories[3])  
+  const codesignalMd = createMdSection('Codesignal', codesignalExercise)
+
   const facebookExercise = await getExercises(directories[2])  
   const facebookMd = createMdSection('Facebook Recruiting', facebookExercise)
 
@@ -61,7 +69,9 @@ const final = async _ => {
     '',
     ...hackMd,
     '',
-    ...facebookMd
+    ...codesignalMd,
+    '',
+    ...facebookMd,
   ]
 
   createMdFile(finalMd)
