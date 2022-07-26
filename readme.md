@@ -325,7 +325,7 @@
 - [two-strings](exercises/hackerrank/two-strings)
 - [utopian-tree](exercises/hackerrank/utopian-tree)
 
-## HackerRank
+## Facebook Recruiting
 
 - [rotary-lock](exercises/facebookrecruiting/rotary-lock)
 - [scoreboard-inference-1](exercises/facebookrecruiting/scoreboard-inference-1)

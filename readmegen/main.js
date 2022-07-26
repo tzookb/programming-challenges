@@ -52,7 +52,7 @@ const final = async _ => {
   const hackMd = createMdSection('HackerRank', hackerrankExercise)
 
   const facebookExercise = await getExercises(directories[2])  
-  const facebookMd = createMdSection('HackerRank', facebookExercise)
+  const facebookMd = createMdSection('Facebook Recruiting', facebookExercise)
 
   const finalMd = [
     '# Code Katas',
