@@ -1,3 +1,4 @@
+from typing import List
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -9,51 +10,59 @@ class Codec:
 
     def serialize(self, root):
         arr = []
-        nodes = [root]
+        if not root:
+            return ""
+        nodes = [(root, 1)]
         while nodes:
-            node = nodes.pop(0)
+            node, idx = nodes.pop(0)
             if not node:
-                arr.append("null")    
+                arr.append(None)
                 continue
-            arr.append(node.val)
-            nodes.append(node.left)
-            nodes.append(node.right)
+            arr.append((node, idx))
+            nodes.append((node.left, idx * 2))
+            nodes.append((node.right, idx * 2 + 1))
+
         
-        j = len(arr) - 1
-        while j >= 0:
-            if arr[j] == "null":
-                arr.pop()
-            else:
-                break
-            j -= 1
+        
+        res = []
+        for item in arr:
+            if item is None:
+                continue
             
-        arr = [str(x) for x in arr]
-        return arr
+            res.append(f"{item[1]}*{item[0].val}")
+
+        raw = "_".join(res)
+        return raw
         
 
     def deserialize(self, data):
-        """Decodes your encoded data to tree.
-        
-        :type data: str
-        :rtype: TreeNode
-        """
-        if not data:
+        if data == "":
             return None
-        root = TreeNode(data[0])
-        nodes = [root]
-        isFirst = True
-        for v in data[1:]:
-            parent = nodes[0]
-            newNode = TreeNode(v)
-            if isFirst:
-                parent.left = newNode
-                isFirst = False
-            else:
-                nodes.pop(0)
-                parent.right = newNode
-                isFirst = True
-            nodes.append(newNode)
-        return root
+        itemsraw = data.split("_")
+        data = list(map(lambda x: x.split("*"), itemsraw))
+        mapped = {}
+        for idx, item in data:
+            mapped[idx] = item
+        
+        def build(idx):
+            if not mapped.keys():
+                return None
+            if str(idx) not in mapped:
+                return None
+
+            cur = TreeNode(int(mapped[str(idx)]))
+            del mapped[str(idx)]
+            left = build(idx * 2) 
+            right = build(idx * 2 + 1) 
+
+
+            cur.left = left
+            cur.right = right
+            
+            return cur
+
+        return build(1)
+            
         
 
 # Your Codec object will be instantiated and called as such:

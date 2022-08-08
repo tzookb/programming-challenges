@@ -1,34 +1,25 @@
-from typing import List
+from typing import Counter, List, Optional
 
-def getMinimumDeflatedDiscCount(N: int, R: List[int]) -> int:
-    if N == 0:
-        return 0
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        from_left = [1]
+        from_right = [1]
 
-    changes = 0
-    prev = R[-1]
-    for i in range(N - 2, -1, -1):
-        cur = R[i]
-        if cur >= prev:
-            changes += 1
-            prev = prev - 1
-        else:
-            prev = cur
-        if prev < 1:
-            return -1
-    
-    return changes
+        for i in range(len(nums)):
+            inverse = len(nums) - 1 - i
+            left = nums[i]
+            right = nums[inverse]
+            from_left.append(from_left[-1] * left)
+            from_right.insert(0, from_right[0] * right)
 
-N = 5
-R = [2, 5, 3, 6, 5]
-# 3
+        result = []
+        for i in range(len(nums)):
+            result.append(
+                from_left[i] * from_right[i+1]
+            )
+        return result
 
-N = 3
-R = [100, 100, 100]
-# 2
 
-N = 4
-R = [6, 5, 4, 3]
-# -1
-
-res = getMinimumDeflatedDiscCount(N, R)
+s = Solution()
+res = s.productExceptSelf([-1,1,0,-3,3])
 print(res)

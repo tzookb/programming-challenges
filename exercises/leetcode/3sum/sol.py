@@ -1,47 +1,30 @@
 from typing import List
 
 
+from typing import Counter, List
+
 class Solution:
-    def twoSum(self, nums: List[int], target) -> List[List[int]]:
-        nums.sort()
-        start = 0
-        end = len(nums) - 1
-        pairs = []
-
-        while start < end:
-            sVal = nums[start]
-            eVal = nums[end]
-            curSum = sVal + eVal
-            if curSum == target:
-                pairs.append([sVal, eVal])
-                start += 1
-                end -= 1
-                while start < end and nums[start] == nums[start - 1]:
-                    start += 1
-            elif curSum < target:
-                start += 1
-            elif curSum > target:
-                end -= 1
-
-        return pairs
-
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        sols = []
+        final = []
         nums.sort()
-        prevNum = None
-        for idx in range(len(nums) - 1):
-            num = nums[idx]
-            if num > 0:
-                break
-            if num == prevNum:
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i - 1]:
                 continue
-            prevNum = num
-            pairs = self.twoSum(nums[idx+1:], 0 - num)
-            for pair in pairs:
-                sols.append([num] + pair)
+            left = i + 1
+            right = len(nums) - 1
 
-        return sols
-
+            while left < right:
+                total = nums[i] + nums[left] + nums[right]
+                if total > 0:
+                    right -= 1
+                elif total < 0:
+                    left += 1
+                else:
+                    final.append([nums[i], nums[left], nums[right]])
+                    left += 1
+                    while nums[left] == nums[left - 1] and left < right:
+                        left += 1
+        return final
 
 
 nums = [-1,0,1,2,-1,-4]

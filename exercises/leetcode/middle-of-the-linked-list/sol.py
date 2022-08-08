@@ -7,11 +7,8 @@ class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         slow = head
         fast = head
-        
-        while fast:
-            if fast is None or fast.next is None:
-                break
+        while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-
         return slow
+        

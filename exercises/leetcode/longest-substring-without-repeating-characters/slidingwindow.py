@@ -1,20 +1,25 @@
+from typing import Counter
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        length = len(s)
-        start_idx = 0
-        end_idx = 0
-        max_sub = 0
-        chars_dict = {}
+        left = 0
+        right = 0
+        counts = Counter()
+        max_size = 0
+        
+        while right < len(s):
+            cur = s[right]
+            counts[cur] += 1
+            while counts[cur] > 1:
+                leftval = s[left]
+                counts[leftval] -= 1
+                left += 1
+            
+            max_size = max(max_size, right - left + 1)
+            right += 1
+        
+        return max_size
+            
 
-        while end_idx < length and start_idx < length:
-            if s[end_idx] not in chars_dict:
-                chars_dict[s[end_idx]] = True
-                max_sub = max(max_sub, end_idx - start_idx + 1)
-                end_idx += 1
-            else:
-                del chars_dict[s[start_idx]]
-                start_idx += 1
-        return max_sub
 
             
 s = Solution()
