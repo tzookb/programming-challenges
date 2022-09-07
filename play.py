@@ -1,22 +1,41 @@
-import functools
-import math
+
 from typing import List
 
-class LargerNumKey(str):
-    def __lt__(x, y):
-        print(x, y, x+y > y+x)
-        return x+y > y+x
+
 class Solution:
-    def largestNumber(self, nums):
-        largest_num = sorted(map(str, nums), key=LargerNumKey)
-        largest_num = ''.join(largest_num)
-        return '0' if largest_num[0] == '0' else largest_num
+    def mincostTickets(self, days: List[int], costs: List[int]) -> int:
+        self.final = float("inf")
 
+        def recu(ds, total):
+            if not ds:
+                self.final = min(self.final, total)
+                return
 
-# print(owncomp(900, 91))
+            # one day
+            recu(ds[1:], total + costs[0])
 
-# nums = [900, 91, 5]
-nums = [3,30,34,5,9]
+            # seven days
+            today = ds[0]
+            for idx in range(len(ds)):
+                cur = ds[idx]
+                if today + 7 < cur:
+                    break
+            recu(ds[idx:], total + costs[1])
+
+            # thirty days
+            today = ds[0]
+            for idx in range(len(ds)):
+                cur = ds[idx]
+                if today + 30 < cur:
+                    break
+            recu(ds[idx:], total + costs[2])
+
+        recu(days, 0)
+
+        return self.final
+
+days = [1,4,6,7,8,20]
+costs = [2,7,15]
 s = Solution()
-res = s.largestNumber(nums)
+res = s.mincostTickets(days, costs)
 print(res)
