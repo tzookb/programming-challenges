@@ -1,33 +1,42 @@
-from typing import Counter, List, Optional
+import itertools
+from os import times
+from time import time
+from typing import Counter, Dict, List, Optional
+
+
+# https://leetcode.com/problems/analyze-user-website-visit-pattern/submissions/
 
 class Solution:
-    def characterReplacement(self, s: str, k: int) -> int:
-        count = [0] * 26
+    def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
+        grouped = {}
+        for user, web in zip(username, website):
+            if user not in grouped:
+                grouped[user] = []
+            grouped[user].append(web)
+        
+        patterns = Counter()
+        for user in grouped:
+            webs = grouped[user]
+            user_patterns = {}
+            for i in range(2, len(webs)):
+                pattern = (webs[i-2], webs[i-1], webs[i])
+                if pattern in user_patterns:
+                    continue
+                user_patterns[pattern] = True
 
-        left = right = longest = 0
+                patterns[pattern] += 1
 
-        getLetterPos = lambda c: ord(c) - ord("A")
+        max_pattern = patterns.most_common()
+        print(max_pattern)
+        # return [max_pattern[0], max_pattern[1], max_pattern[2]]
 
-        def isGood():
-            total = sum(count)
-            maxed = max(count)
-            return total - maxed <= k
+username = ["joe","joe","joe","james","james","james","james","mary","mary","mary"]
+timestamp = [1,2,3,4,5,6,7,8,9,10]
+website = ["home","about","career","home","cart","maps","home","home","about","career"]
 
-        while right < len(s):
-            add = getLetterPos(s[right])
-            
-            count[add] += 1
-            while not isGood():
-                rm = getLetterPos(s[left])
-                count[rm] -= 1
-                left += 1
-
-            longest = max(longest, right - left + 1)
-            right += 1
-
-        return longest
-
+# username = ["ua","ua","ua","ub","ub","ub"]
+# timestamp = [1,2,3,4,5,6]
+# website = ["a","b","c","a","b","a"]
 s = Solution()
-res = s.characterReplacement("ABAB", 2) # 4
-res = s.characterReplacement("AABABBA", 1) # 4
+res = s.mostVisitedPattern(username, timestamp, website)
 print(res)
