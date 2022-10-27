@@ -26,17 +26,34 @@ class Solution:
 
                 patterns[pattern] += 1
 
-        max_pattern = patterns.most_common()
-        print(max_pattern)
-        # return [max_pattern[0], max_pattern[1], max_pattern[2]]
+        max_pat = -1
+        for pattern in patterns:
+            max_pat = max(max_pat, patterns[pattern])
+        
+        suitable = []
+        for pattern in patterns:
+            if patterns[pattern] == max_pat:
+                suitable.append(pattern)
+        
+        if len(suitable) <= 1:
+            return suitable[0]
 
-username = ["joe","joe","joe","james","james","james","james","mary","mary","mary"]
-timestamp = [1,2,3,4,5,6,7,8,9,10]
-website = ["home","about","career","home","cart","maps","home","home","about","career"]
+
+        max_patterns = ["".join(pt[0]) for pt in suitable]
+        max_patterns.sort()
+        return max_patterns[0]
+
+# username = ["joe","joe","joe","james","james","james","james","mary","mary","mary"]
+# timestamp = [1,2,3,4,5,6,7,8,9,10]
+# website = ["home","about","career","home","cart","maps","home","home","about","career"]
 
 # username = ["ua","ua","ua","ub","ub","ub"]
 # timestamp = [1,2,3,4,5,6]
 # website = ["a","b","c","a","b","a"]
+username = ["joe","joe","joe","james","james","james","james","mary","mary","mary"]
+timestamp = [1,2,3,4,5,6,7,8,9,10]
+website = ["home","about","career","home","cart","maps","home","home","about","career"]
+
 s = Solution()
 res = s.mostVisitedPattern(username, timestamp, website)
 print(res)
