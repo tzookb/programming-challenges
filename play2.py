@@ -1,34 +1,59 @@
+from typing import List, Optional
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
 
 class Solution:
-    def robotWithString(self, s: str) -> str:
-        final = []
-        slist = list(s)
-        tlist = []
-        abc = [{} for _ in range(26)]
-        for idx, c in enumerate(slist):
-            abc[ord(c) - ord("a")][idx] = True
+    def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
+        result = []
+        graph = self.buildGrap(root)
+        visited = {}
+        cnt = 0
+
+        bfs = [(target.val, 0)]
+        while bfs:
+            cur, dist = bfs.pop()
+            if not cur:
+                continue
+            if cur in visited:
+                continue
+            visited[cur] = True
+            if dist == k:
+                result.append(cur)
+                continue
+
+            children = graph[cur]
+            for child in children:
+                bfs.append((child, dist + 1))
         
-        cur_pos = 0
-        for idx, matches in enumerate(abc):
-            c = chr(idx + ord("a"))
+        return result
 
-            while tlist and ord(tlist[-1]) <= ord(c):
-                final.append(tlist.pop())
 
-            for match in matches:
-                if match < cur_pos:
-                    continue
-                while cur_pos <= match:
-                    tlist.append(s[cur_pos])
-                    cur_pos += 1
-                final.append(tlist.pop())
-            
-        final += tlist[::-1]
-        return "".join(final)
 
-s = Solution()
-res = s.robotWithString("bdda")
-res = s.robotWithString("bac")
-res = s.robotWithString("zza")
-res = s.robotWithString("vzhofnpo")
-print(res)
+    def buildGrap(self, root: TreeNode) -> List[int]:
+        paths = {}
+        paths[root.val] = {}
+        bfs = [root]
+        while bfs:
+            cur = bfs.pop()
+            if cur.left:
+                paths[cur.val][cur.left.val] = True
+                if cur.left.val not in paths:
+                    paths[cur.left.val] = {}
+                paths[cur.left.val][cur.val] = True
+                bfs.append(cur.left)
+            if cur.right:
+                paths[cur.val][cur.right.val] = True
+                if cur.right.val not in paths:
+                    paths[cur.right.val] = {}
+                paths[cur.right.val][cur.val] = True
+                bfs.append(cur.right)
+        return paths
+
+# s = Solution()
+# res = s.distanceK()
+# print(res)
