@@ -9,7 +9,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run genmd"
+      "pre-commit": "npm run genmd"
     }
   },
   "repository": {
