@@ -3,59 +3,72 @@ from typing import List
 
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
-        graph = self.buildGraphs(words)
-        rules = self.getRules(words)
-        letters = self.getLetters(words)
-
-        for pointer, pointee in rules:
-            letters[pointee] += 1
-        
-
-
-    
-        for lt in letters:
-            if lt in pointed_on_graph:
+        for i in range(len(words) - 1):
+            w1 = words[i]
+            w2 = words[i + 1]
+            if len(w1) <= len(w2):
                 continue
-            pointed_on_graph[lt] = {}
+            if w1.startswith(w2):
+                return ""
+
+        graph = self.buildGraphs(words)
+        in_degree = self.getInDegree(graph, words)
+
+        queue = []
+        for k in in_degree:
+            if in_degree[k] > 0:
+                continue
+            queue.append(k)
 
         final = []
-        count = 0
-        while len(final) < len(letters):
-        # while count < 7:
-            not_pointed_on = []
-            # find the not pointed on items
-            for lt in pointed_on_graph:
-                if pointed_on_graph[lt]:
-                    continue
-                not_pointed_on.append(lt)
-            # remove their points
-            for lt in not_pointed_on:
-                del pointed_on_graph[lt]
-                for k in pointed_on_graph:
-                    if lt in pointed_on_graph[k]:
-                        del pointed_on_graph[k][lt]
 
-            final += not_pointed_on
-            count += 1
+        while queue:
+            cur = queue.pop(0)
+            final.append(cur)
+            if cur not in graph:
+                continue
+            points_on = graph[cur]
+            for pointed_on in points_on:
+                in_degree[pointed_on] -= 1
+                if in_degree[pointed_on] == 0:
+                    queue.append(pointed_on)
+        
+        all_letters = self.getLetters(words)
+        if len(final) < len(all_letters):
+            return ""
 
         return "".join(final)
 
+    def getInDegree(self, graph, words):
+        in_degree = {}
+        letters = self.getLetters(words)
+        for letter in letters:
+            in_degree[letter] = 0
+            
+        for node in graph:
+            for pointed_on in graph[node]:
+                in_degree[pointed_on] += 1
+
+        return in_degree
+
     def getLetters(self, words: List[str]):
-        letters = {}
+        letters = set()
         for word in words:
             for c in word:
-                letters[c] = 0
+                letters.add(c)
         return letters
 
     def buildGraphs(self, words: List[str]):
-        point_to_graph = {}
+        graph = {}
+        
         rules = self.getRules(words)
         for depender, dependee in rules:
-            if depender not in point_to_graph:
-                point_to_graph[depender] = {}
-            point_to_graph[depender][dependee] = True
 
-        return point_to_graph
+            if depender not in graph:
+                graph[depender] = {}
+            graph[depender][dependee] = True
+
+        return graph
 
     def getRules(self, words: List[str]):
         rules = []
@@ -74,13 +87,12 @@ class Solution:
             return [c1, c2]
         return None
 
-inp = [
-    "wrt",
-    "wrf",
-    "er",
-    "ett",
-    "rftt"
-]
-sol = Solution()
-res = sol.alienOrder(inp)
+# words = ["wrt","wrf","er","ett","rftt"] #wertf
+# words = ["z","x"] #zx
+# words = ["z","x","z"] #
+# words = ["abc", "ab"] # 
+# words = ["z", "z"] # z
+words = ["abc", "z", "ad"] # 
+s = Solution()
+res = s.alienOrder(words)
 print(res)
