@@ -1,44 +1,56 @@
 from typing import List, Optional
 
+
+# Definition for a QuadTree node.
+class Node:
+    def __init__(self, val, isLeaf, topLeft, topRight, bottomLeft, bottomRight):
+        self.val = val
+        self.isLeaf = isLeaf
+        self.topLeft = topLeft
+        self.topRight = topRight
+        self.bottomLeft = bottomLeft
+        self.bottomRight = bottomRight
+
+
 class Solution:
-    def longestSubstring(self, s: str, k: int) -> int:
-        counts = [0] * 26
-        left = right = 0
-        max_size = -1
+    def construct(self, grid: List[List[int]]) -> Node:
+        if len(grid) == 1:
+            return Node(
+                grid[0][0],
+                True,
+                None,
+                None,
+                None,
+                None,
+            )
 
-        def isValid():
-            for count in counts:
-                if count == 0:
-                    continue
-                if count < k:
-                    return False
-            return True
+        top_left = self.construct(self.getSquare(grid, "topleft"))
+        top_right = self.construct(self.getSquare(grid, "topright"))
+        bottom_left = self.construct(self.getSquare(grid, "bottomleft"))
+        bottom_right = self.construct(self.getSquare(grid, "bottomright"))
+        
+        return Node(
+            1,
+            False,
+            top_left,
+            top_right,
+            bottom_left,
+            bottom_right
+        )
+    
+    def getSquare(self, grid: List[List[int]], pos: str) -> List[List[int]]:
+        half_size = len(grid) // 2
+        rows = grid[0:half_size] if pos in ["topleft", "topright"] else grid[half_size:]
 
-        while right < len(s):
-            cur = s[right]
-            cur_pos = ord(cur) - ord("a")
-            counts[cur_pos] += 1
-            if counts[cur_pos] < k:
-                max_size = max(max_size, right - left + 1)
-                right += 1
-                continue
+        res = []
+        for row in rows:
+            colls = row[0:half_size] if pos in ["topleft", "bottomleft"] else row[half_size:]
+            # print("collscollscolls", row, colls, half_size, pos)
+            res.append(colls)
+        
+        return res
 
-            print("isvalid", s[left:right+1])
-            if isValid():
-                max_size = max(max_size, right - left + 1)
-                right += 1
-                continue
-
-            while not isValid() and left <= right:
-                remove = s[left]
-                remove = ord(remove) - ord("a")
-                counts[remove] -= 1
-                left += 1
-
-            right += 1
-
-        return max_size
-
+grid = [[0,1],[1,0]]
 s = Solution()
-res = s.longestSubstring("ababbc", 2)
+res = s.construct(grid)
 print(res)
