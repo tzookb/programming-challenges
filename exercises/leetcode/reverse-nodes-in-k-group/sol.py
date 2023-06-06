@@ -14,31 +14,29 @@ class Solution:
         is_full = (size-1) % k == 0
         
         reverse_groups = []
-        list_breakers = []
         for pos in positions:
-            before_start, start = self.getNodeAndPrevInPos(head_helper, pos + 1)
-            list_breakers.append(before_start)
-            reverse_groups.append(start)
+            left_start = self.getNodeAndPrevInPos(head_helper, pos + 1)
+            reverse_groups.append(left_start)
         
-        for breaker in list_breakers:
-            breaker.next = None
+        sub_groups = []
+        for item in reverse_groups:
+            left_connector, start = item
+            left_connector.next = None
+            sub_groups.append(start)
 
-        reveresed = [self.reverseList(sg) for sg in reverse_groups[:-1]]
-        last = self.reverseList(reverse_groups[-1]) if is_full else reverse_groups[-1]
+        reveresed = [self.reverseList(sg) for sg in sub_groups[:-1]]
+        last = self.reverseList(sub_groups[-1]) if is_full else sub_groups[-1]
         reveresed.append(last)
 
-        self.mergeLists(reveresed)
-        
-        return reveresed[0]
-        
-
-    def mergeLists(self, lists):
-        for i in range(len(lists) - 1):
-            first = lists[i]
-            sec = lists[i + 1]
+        for i in range(len(reveresed) - 1):
+            first = reveresed[i]
+            sec = reveresed[i + 1]
             while first.next:
                 first = first.next
             first.next = sec
+        
+        return reveresed[0]
+        
 
     def reverseList(self, head: Optional[ListNode]) -> ListNode:
         prev = None
