@@ -1,76 +1,24 @@
-from typing import List, Optional
+from typing import List, Dict, Tuple
 
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 class Solution:
-    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        head_helper = ListNode(0, head)
-        size = self.getListSize(head_helper)
+    def countDistinct(self, nums: List[int], k: int, p: int) -> int:
+        distinct_subarrays = set()
 
-        positions = list(range(1, size, k))
-        is_full = (size-1) % k == 0
-        
-        reverse_groups = []
-        list_breakers = []
-        for pos in positions:
-            before_start, start = self.getNodeAndPrevInPos(head_helper, pos + 1)
-            list_breakers.append(before_start)
-            reverse_groups.append(start)
-        
-        for breaker in list_breakers:
-            breaker.next = None
+        size = len(nums)
+        for i in range(size):
+            cur_divises = 0
+            for j in range(i, size):
+                cur = nums[j]
+                if cur % p == 0:
+                    cur_divises += 1 
+                if cur_divises > k:
+                    break
+                
+                distinct_subarrays.add(tuple(nums[i:j+1]))
 
-        reveresed = [self.reverseList(sg) for sg in reverse_groups[:-1]]
-        last = self.reverseList(reverse_groups[-1]) if is_full else reverse_groups[-1]
-        reveresed.append(last)
+        return len(distinct_subarrays)
 
-        self.mergeLists(reveresed)
-        
-        return reveresed[0]
-        
 
-    def mergeLists(self, lists):
-        for i in range(len(lists) - 1):
-            first = lists[i]
-            sec = lists[i + 1]
-            while first.next:
-                first = first.next
-            first.next = sec
-
-    def reverseList(self, head: Optional[ListNode]) -> ListNode:
-        prev = None
-        cur = head
-        
-        while cur:
-            next_cur = cur.next
-            cur.next = prev
-            prev = cur
-            cur = next_cur
-
-        return prev
-        
-
-    def getNodeAndPrevInPos(self, head: Optional[ListNode], pos: int) -> ListNode:
-        cur = head
-        prev = None
-        count = 0
-        
-        while cur:
-            count += 1
-            if count == pos:
-                return (prev, cur)
-            prev = cur
-            cur = cur.next
-        return None
-
-    def getListSize(self, head: Optional[ListNode]) -> int:
-        cur = head
-        count = 0
-        while cur:
-            count += 1
-            cur = cur.next
-        return count
-
+s = Solution()
+res = s.countDistinct([2,3,3,2,2], 2, 2)
+print(res)
