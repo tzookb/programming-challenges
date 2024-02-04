@@ -1,24 +1,14 @@
 from typing import List, Dict, Tuple
-
+# https://www.youtube.com/watch?v=zx5Sw9130L0
 class Solution:
-    def countDistinct(self, nums: List[int], k: int, p: int) -> int:
-        distinct_subarrays = set()
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        maxed = 0
+        stack = []
 
-        size = len(nums)
-        for i in range(size):
-            cur_divises = 0
-            for j in range(i, size):
-                cur = nums[j]
-                if cur % p == 0:
-                    cur_divises += 1 
-                if cur_divises > k:
-                    break
-                
-                distinct_subarrays.add(tuple(nums[i:j+1]))
+        for i, height in enumerate(heights):
+            while stack and stack[-1][X] < height:
 
-        return len(distinct_subarrays)
-
-
+heights = [2,1,5,6,2,3]
 s = Solution()
-res = s.countDistinct([2,3,3,2,2], 2, 2)
+res = s.largestRectangleArea(heights)
 print(res)
