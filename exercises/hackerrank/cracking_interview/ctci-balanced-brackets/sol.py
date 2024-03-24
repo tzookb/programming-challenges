@@ -26,4 +26,4 @@ def is_matched(str):
     return len(stack) == 0
 
 res = is_matched('{[()](})')
-print res
+print(res)
