@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/tzookb/programming-challenges#readme",
   "devDependencies": {
-    "babel-jest": "^24.8.0",
+    "babel-jest": "^29.7.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "babel-preset-es2015": "^6.24.1",
     "husky": "^4.2.3",
