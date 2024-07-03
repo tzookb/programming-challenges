@@ -13,6 +13,7 @@ class Solution:
     def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
         parent = self.find_parent(p)
         common = self.lowestCommonAncestorFromParent(parent, p, q)
+        print(common)
         return common
 
     def find_parent(self, node: 'Node') -> 'Node':
@@ -44,5 +45,6 @@ class Solution:
             return result
 
         recu(parent)
+        return self.solved
 
 
