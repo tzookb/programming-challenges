@@ -1,38 +1,26 @@
 package main
 
 import (
+	"fmt"
 	"math"
+	"slices"
 )
 
 func main() {
-	nums := []int{100, 4, 200, 1, 3, 2}
+	nums := []int{1, 5, 0, 10, 14}
 
-	longestConsecutive(nums)
+	res := minDifference(nums)
+	fmt.Println(res)
 }
 
-func longestConsecutive(nums []int) int {
-	mapped := make(map[int]bool)
-	for _, val := range nums {
-		mapped[val] = true
-	}
-	max_streak := 0
+func minDifference(nums []int) int {
+	slices.Sort(nums)
+	minDiff := int(math.Inf(1))
 
-	for num := range mapped {
-		prev := num - 1
-		if _, ok := mapped[prev]; ok {
-			continue
-		}
-		streak := 0
-		cur := num
-		for {
-			if _, ok := mapped[cur]; !ok {
-				break
-			}
-			cur += 1
-			streak += 1
-		}
-		max_streak = int(math.Max(float64(streak), float64(max_streak)))
+	for i := range 4 {
+		fmt.Println(i)
+		math.Min(minDiff, nums[i]-nums[i])
 	}
 
-	return max_streak
+	return nums[0]
 }
