@@ -1,60 +1,31 @@
-from typing import Optional, List
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from typing import Optional
+
 class Solution:
-    def __init__(self) -> None:
-        self.position = [0, 0]
-        self.directions = [(0, 1), (1, 0), (0, -1), (0, -1)]
-        self.directionIdx = 0
-        self.m = 3
-        self.n = 5
-
-    def spiralMatrix(self, m: int, n: int, head: Optional[ListNode]) -> List[List[int]]:
-        mat = [[-1 for _ in range(n)] for _ in range(m)]
-
-        cur = head
-        while cur:
-            print(self.position)
-            mat[self.position[0]][self.position[1]] = cur.val
-            cur = cur.next
-            self.moveToNext()
+    def findKthNumber(self, n: int, k: int) -> int:
+        sol = []
+        dfs = []
+        counted = k
+        for i in range(9, 0, -1):
+            dfs.append(i)
         
-        return mat
-    
-    def isPosOutOfBounds(self):
-        if self.position[0] < 0 or self.position[0] >= self.m:
-            return True
-        if self.position[1] < 0 or self.position[1] >= self.n:
-            return True
-        return False
+        while dfs:
+            cur = dfs.pop()
+            if cur > n:
+                continue
 
-    def changeDirection(self):
-        self.directionIdx += 1
-        if self.directionIdx == 4:
-            self.directionIdx = 0
 
-    def moveStepForward(self):
-        direction = self.directions[self.directionIdx]
-        self.position[0] += direction[0]
-        self.position[1] += direction[1]
-
-    def moveStepBackward(self):
-        direction = self.directions[self.directionIdx]
-        self.position[0] -= direction[0]
-        self.position[1] -= direction[1]
-
-    def moveToNext(self):
-        self.moveStepForward()
-        if self.isPosOutOfBounds():
-            self.moveStepBackward()
-            self.changeDirection()
-            self.moveStepForward()
+            sol.append(cur)
+            counted -= 1
+            if counted == 0:
+                return cur
+            nextLevel = cur * 10
+            for i in range(9, -1, -1):
+                dfs.append(nextLevel + i)
+        
+    def isNbiggerThankids(self, n, curNum):
+        
+        
 
 s = Solution()
-s.position = [2, 0]
-s.directionIdx = 0
-s.moveToNext()
-print(s.position)
+res = s.findKthNumber(13, 2)
+print(res)
