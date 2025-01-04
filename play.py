@@ -18,28 +18,15 @@ class Solution:
                 return None
             
             mid = self.get_linked_list_mid(start)
-            left, mid, right = self.break_linked_list_node(start, mid)
+            left = start
+            right = mid.next
+            mid.next = None
             
             lefttree = recu(left)
             righttree = recu(right)
             return TreeNode(mid.val, lefttree, righttree)
 
         return recu(head)
-    
-    def break_linked_list_node(self, head: Optional[ListNode], breakpoint: Optional[ListNode]):
-        if not head:
-            return [None, None, None]
-        if not head.next:
-            return [head, breakpoint, None]
-        left = head
-        while left.next != breakpoint:
-            left = left.next
-        left.next = None
-
-        right = breakpoint.next
-        breakpoint.next = None
-
-        return [left, breakpoint, right]
 
     def get_linked_list_mid(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head:
@@ -48,9 +35,11 @@ class Solution:
         slow = fast = head
 
         while fast and fast.next:
+            prev = slow
             slow = slow.next
             fast = fast.next.next
         
+        prev.next = None
         return slow
 
 # s = Solution()
